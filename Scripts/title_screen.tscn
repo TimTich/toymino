@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dv0jyh8rw0xi6"]
 
 [ext_resource type="Script" uid="uid://7qm7rn2qry1d" path="res://Scripts/title_screen.gd" id="1_dk33w"]
+[ext_resource type="Texture2D" uid="uid://bg04egr0iu42e" path="res://Assets/wallpaper.jpg" id="2_rc3vr"]
+[ext_resource type="Texture2D" uid="uid://ixp2uw4wpuij" path="res://Assets/Tafel.png" id="3_oml5i"]
 
 [node name="TitleScreen" type="Control" unique_id=133374027]
 layout_mode = 3
@@ -13,28 +15,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dk33w")
 
+[node name="Wallpaper" type="Sprite2D" parent="." unique_id=826210519]
+position = Vector2(171, 162)
+scale = Vector2(0.46875003, 0.45040762)
+texture = ExtResource("2_rc3vr")
+
+[node name="Wallpaper2" type="Sprite2D" parent="." unique_id=608602055]
+position = Vector2(170.99998, 492)
+scale = Vector2(0.46875003, 0.45040762)
+texture = ExtResource("2_rc3vr")
+
+[node name="Wallpaper3" type="Sprite2D" parent="." unique_id=378064552]
+position = Vector2(515.5, 161.75)
+scale = Vector2(0.46875003, 0.45040762)
+texture = ExtResource("2_rc3vr")
+
+[node name="Wallpaper4" type="Sprite2D" parent="." unique_id=521350137]
+position = Vector2(515.5, 491.75)
+scale = Vector2(0.46875003, 0.45040762)
+texture = ExtResource("2_rc3vr")
+
+[node name="Wallpaper5" type="Sprite2D" parent="." unique_id=663531618]
+position = Vector2(860.49994, 162)
+scale = Vector2(0.46875003, 0.45040762)
+texture = ExtResource("2_rc3vr")
+
+[node name="Wallpaper6" type="Sprite2D" parent="." unique_id=580433214]
+position = Vector2(860.49994, 492)
+scale = Vector2(0.46875003, 0.45040762)
+texture = ExtResource("2_rc3vr")
+
+[node name="Wallpaper7" type="Sprite2D" parent="." unique_id=416813543]
+position = Vector2(1205, 161.75)
+scale = Vector2(0.46875003, 0.45040762)
+texture = ExtResource("2_rc3vr")
+
+[node name="Wallpaper8" type="Sprite2D" parent="." unique_id=1394395999]
+position = Vector2(1205, 491.75)
+scale = Vector2(0.46875003, 0.45040762)
+texture = ExtResource("2_rc3vr")
+
 [node name="StartButton" type="Button" parent="." unique_id=1032258896]
 layout_mode = 0
-offset_left = 431.0
-offset_top = 356.0
-offset_right = 718.0
-offset_bottom = 415.0
+offset_left = 585.0
+offset_top = 118.0
+offset_right = 872.0
+offset_bottom = 177.0
+rotation = 1.5707964
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="." unique_id=1947419926]
 layout_mode = 0
-offset_left = 429.0
-offset_top = 429.0
-offset_right = 716.0
-offset_bottom = 488.0
+offset_left = 779.0
+offset_top = 118.0
+offset_right = 1066.0
+offset_bottom = 177.0
+rotation = 1.5707964
 text = "Quit"
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=336233107]
 layout_mode = 0
-offset_left = 430.0
-offset_top = 275.0
-offset_right = 720.0
-offset_bottom = 334.0
+offset_left = 389.0
+offset_top = 118.0
+offset_right = 676.0
+offset_bottom = 177.0
+rotation = 1.5707964
 alignment = 1
 selected = 0
 item_count = 5
@@ -42,12 +87,21 @@ popup/item_0/text = "Level 1"
 popup/item_0/id = 0
 popup/item_1/text = "Level 2"
 popup/item_1/id = 1
+popup/item_1/disabled = true
 popup/item_2/text = "Level 3"
 popup/item_2/id = 2
+popup/item_2/disabled = true
 popup/item_3/text = "Level 4"
 popup/item_3/id = 3
+popup/item_3/disabled = true
 popup/item_4/text = "Level 5"
 popup/item_4/id = 4
+popup/item_4/disabled = true
+
+[node name="Tafel" type="Sprite2D" parent="." unique_id=902469752]
+position = Vector2(555, 536)
+scale = Vector2(1.92, 1.7533333)
+texture = ExtResource("3_oml5i")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
