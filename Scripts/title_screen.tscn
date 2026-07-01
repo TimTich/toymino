@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dv0jyh8rw0xi6"]
+
+[ext_resource type="Script" uid="uid://7qm7rn2qry1d" path="res://Scripts/title_screen.gd" id="1_dk33w"]
+
+[node name="TitleScreen" type="Control" unique_id=133374027]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dk33w")
+
+[node name="StartButton" type="Button" parent="." unique_id=1032258896]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 356.0
+offset_right = 718.0
+offset_bottom = 415.0
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1947419926]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 429.0
+offset_right = 716.0
+offset_bottom = 488.0
+text = "Quit"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=336233107]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 275.0
+offset_right = 720.0
+offset_bottom = 334.0
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "Level 1"
+popup/item_0/id = 0
+popup/item_1/text = "Level 2"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = "Level 3"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "Level 4"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/text = "Level 5"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
