@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhi84ownjbe5o"]
+
+[ext_resource type="Texture2D" uid="uid://ckqdcn8b06cmo" path="res://scenes/environment/trap_klein/Trap klein.png" id="1_gvwmr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqc7i"]
+size = Vector2(60, 30)
+
+[node name="TrapKlein" type="StaticBody2D" unique_id=888224850]
+collision_layer = 5
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1903860856]
+texture = ExtResource("1_gvwmr")
+
+[node name="TopBlockCollider" type="CollisionShape2D" parent="." unique_id=255180505]
+position = Vector2(-15, -15)
+shape = SubResource("RectangleShape2D_1os0n")
+
+[node name="BottomBlockCollider" type="CollisionShape2D" parent="." unique_id=968624542]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_bqc7i")

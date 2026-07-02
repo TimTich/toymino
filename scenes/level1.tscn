@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bwstegqqrrj3m"]
+
+[ext_resource type="Texture2D" uid="uid://chsuvq0ajaae3" path="res://icon.svg" id="1_6sh32"]
+[ext_resource type="PackedScene" uid="uid://c66svb00pd7n5" path="res://scenes/toys/domino/domino.tscn" id="2_ejswk"]
+[ext_resource type="PackedScene" uid="uid://ctkg5mnpx1f1f" path="res://scenes/environment/tafel/tafel.tscn" id="3_bbk5w"]
+[ext_resource type="PackedScene" uid="uid://dhi84ownjbe5o" path="res://scenes/environment/trap_klein/trap_klein.tscn" id="4_conm7"]
+[ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="5_d3jkd"]
+[ext_resource type="PackedScene" uid="uid://bd72ravr51va2" path="res://scenes/toys/car/car.tscn" id="6_u3awl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
+size = Vector2(800, 75)
+
+[node name="LevelManager" type="Node" unique_id=902343664]
+
+[node name="Level1" type="Node2D" parent="." unique_id=1387798288]
+
+[node name="Floor" type="StaticBody2D" parent="Level1" unique_id=189274120]
+position = Vector2(180, 565)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Level1/Floor" unique_id=1364646237]
+position = Vector2(393.99997, 26.499996)
+scale = Vector2(6.2499995, 0.5859375)
+texture = ExtResource("1_6sh32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Floor" unique_id=446575521]
+position = Vector2(394, 26.5)
+shape = SubResource("RectangleShape2D_1os0n")
+
+[node name="Domino" parent="Level1" unique_id=1991590098 instance=ExtResource("2_ejswk")]
+position = Vector2(323, 384)
+isFirst = true
+
+[node name="Domino2" parent="Level1" unique_id=564463175 instance=ExtResource("2_ejswk")]
+position = Vector2(355, 384)
+tipImpulse = Vector2(70, 0)
+
+[node name="Domino3" parent="Level1" unique_id=2104497383 instance=ExtResource("2_ejswk")]
+position = Vector2(389, 384)
+tipImpulse = Vector2(70, 0)
+
+[node name="Domino4" parent="Level1" unique_id=524222818 instance=ExtResource("2_ejswk")]
+position = Vector2(425, 384)
+tipImpulse = Vector2(70, 0)
+
+[node name="Tafel" parent="Level1" unique_id=833002844 instance=ExtResource("3_bbk5w")]
+position = Vector2(329, 480)
+
+[node name="TrapKlein" parent="Level1" unique_id=888224850 instance=ExtResource("4_conm7")]
+position = Vector2(526, 522)
+
+[node name="Ball" parent="Level1" unique_id=710849021 instance=ExtResource("5_d3jkd")]
+position = Vector2(452, 384)
+can_sleep = false
+
+[node name="Domino5" parent="Level1" unique_id=246086847 instance=ExtResource("2_ejswk")]
+position = Vector2(600, 532)
+
+[node name="Domino6" parent="Level1" unique_id=495719941 instance=ExtResource("2_ejswk")]
+position = Vector2(635, 532)
+
+[node name="Domino7" parent="Level1" unique_id=495243564 instance=ExtResource("2_ejswk")]
+position = Vector2(667, 532)
+
+[node name="Domino8" parent="Level1" unique_id=1314929499 instance=ExtResource("2_ejswk")]
+position = Vector2(699, 532)
+
+[node name="Car2" parent="Level1" unique_id=1451795916 instance=ExtResource("6_u3awl")]
+position = Vector2(567, 287)

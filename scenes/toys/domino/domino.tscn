@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c66svb00pd7n5"]
+
+[ext_resource type="Script" uid="uid://bh1sjgfbbjylx" path="res://scenes/toys/domino/domino.gd" id="1_pay6r"]
+[ext_resource type="Texture2D" uid="uid://dex7kwvwkvw1p" path="res://scenes/toys/domino/sprites/Domino blauw.png" id="2_pay6r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pay6r"]
+friction = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqc7i"]
+size = Vector2(13, 40)
+
+[node name="Domino" type="RigidBody2D" unique_id=1991590098]
+collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_pay6r")
+can_sleep = false
+max_contacts_reported = 3
+script = ExtResource("1_pay6r")
+tipImpulse = Vector2(30, 0)
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1306648110]
+unique_name_in_owner = true
+texture = ExtResource("2_pay6r")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1033116433]
+shape = SubResource("RectangleShape2D_bqc7i")
+
+[node name="CheckFallStateTimer" type="Timer" parent="." unique_id=1526146502]
+unique_name_in_owner = true
+wait_time = 0.1
+autostart = true
+
+[node name="TippingPoint" type="Marker2D" parent="." unique_id=1009242126]
+unique_name_in_owner = true
+position = Vector2(0, -17)
+
+[connection signal="timeout" from="CheckFallStateTimer" to="." method="check_fall_state"]

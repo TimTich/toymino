@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bj4mnvhospm4u"]
+
+[ext_resource type="Texture2D" uid="uid://bahrmehw240qs" path="res://scenes/toys/ball/Bal.png" id="1_vb10y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovev1"]
+friction = 0.5
+bounce = 0.75
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1os0n"]
+radius = 13.0
+
+[node name="Ball" type="RigidBody2D" unique_id=710849021]
+physics_material_override = SubResource("PhysicsMaterial_ovev1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=351957701]
+texture = ExtResource("1_vb10y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=849760672]
+shape = SubResource("CircleShape2D_1os0n")

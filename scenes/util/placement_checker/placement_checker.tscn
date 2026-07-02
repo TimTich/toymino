@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dpslc32nt4ss5"]
+
+[ext_resource type="Script" uid="uid://de77pp6bhaqp5" path="res://scenes/util/placement_checker/placement_checker.gd" id="1_73pgm"]
+
+[node name="PlacementChecker" type="Area2D" unique_id=1327250746]
+collision_layer = 0
+collision_mask = 4
+input_pickable = false
+script = ExtResource("1_73pgm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
