@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bnkyy10w0121s"]
+
+[ext_resource type="Texture2D" uid="uid://crlmjkdw5bpdq" path="res://scenes/toys/balloon/Ballon.png" id="1_5l1xl"]
+[ext_resource type="Script" uid="uid://crpmlnm67amv0" path="res://scenes/toys/balloon/balloon.gd" id="1_pkwua"]
+[ext_resource type="PackedScene" uid="uid://dpslc32nt4ss5" path="res://scenes/util/placement_checker/placement_checker.tscn" id="3_uk7hi"]
+[ext_resource type="PackedScene" uid="uid://cgjr2ijplhlqk" path="res://scenes/util/grab_area/grab_area.tscn" id="4_pb5s4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1os0n"]
+radius = 37.0
+height = 94.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bqc7i"]
+radius = 44.0
+height = 118.0
+
+[node name="Balloon" type="RigidBody2D" unique_id=292060754 node_paths=PackedStringArray("rigidbody")]
+collision_layer = 3
+gravity_scale = 0.0
+center_of_mass_mode = 1
+can_sleep = false
+freeze = true
+script = ExtResource("1_pkwua")
+rigidbody = NodePath(".")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1187894076]
+texture = ExtResource("1_5l1xl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=826257777]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_1os0n")
+disabled = true
+
+[node name="PlacementChecker" parent="." unique_id=1327250746 instance=ExtResource("3_uk7hi")]
+collision_mask = 1
+isReverse = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementChecker" unique_id=2110530364]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_1os0n")
+
+[node name="GrabArea" parent="." unique_id=506054645 node_paths=PackedStringArray("target") instance=ExtResource("4_pb5s4")]
+target = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=399119696]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_bqc7i")

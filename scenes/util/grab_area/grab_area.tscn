@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cgjr2ijplhlqk"]
+
+[ext_resource type="Script" uid="uid://dsiccjwhyij3j" path="res://scenes/toys/car/grab_area.gd" id="1_wha2d"]
+
+[node name="GrabArea" type="Area2D" unique_id=506054645]
+script = ExtResource("1_wha2d")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

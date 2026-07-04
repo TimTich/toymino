@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bd72ravr51va2"]
+
+[ext_resource type="Texture2D" uid="uid://l0vvtv2o5l0j" path="res://scenes/toys/car/Raceauto.png" id="1_osa16"]
+[ext_resource type="Script" uid="uid://77fq6e6fim8m" path="res://scenes/toys/car/car.gd" id="1_p4ltx"]
+[ext_resource type="PackedScene" uid="uid://dpslc32nt4ss5" path="res://scenes/util/placement_checker/placement_checker.tscn" id="3_pglbh"]
+[ext_resource type="PackedScene" uid="uid://cgjr2ijplhlqk" path="res://scenes/util/grab_area/grab_area.tscn" id="4_a78gx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p4ltx"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
+size = Vector2(20, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1os0n"]
+radius = 11.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqc7i"]
+size = Vector2(100, 14)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1os0n"]
+radius = 19.0
+height = 114.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ku1j"]
+size = Vector2(20, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pglbh"]
+size = Vector2(20, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nlcp"]
+size = Vector2(119, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gloqp"]
+size = Vector2(108, 39)
+
+[node name="Car" type="RigidBody2D" unique_id=1546457409 node_paths=PackedStringArray("rigidbody")]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_p4ltx")
+can_sleep = false
+freeze = true
+script = ExtResource("1_p4ltx")
+speed = 500.0
+rigidbody = NodePath(".")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926077010]
+texture = ExtResource("1_osa16")
+
+[node name="SpoilerCollider" type="CollisionShape2D" parent="." unique_id=269414400]
+position = Vector2(-40, -9)
+shape = SubResource("RectangleShape2D_1os0n")
+disabled = true
+
+[node name="BackTireCollider" type="CollisionShape2D" parent="." unique_id=1212192066]
+position = Vector2(-33, 6)
+shape = SubResource("CircleShape2D_1os0n")
+disabled = true
+
+[node name="FrontTireCollider" type="CollisionShape2D" parent="." unique_id=1045817574]
+position = Vector2(27, 6)
+shape = SubResource("CircleShape2D_1os0n")
+disabled = true
+
+[node name="BodyCollider" type="CollisionShape2D" parent="." unique_id=1275804152]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_bqc7i")
+disabled = true
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1226698287]
+unique_name_in_owner = true
+position = Vector2(-1, -6)
+collision_layer = 0
+collision_mask = 2
+input_pickable = false
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=2010947514]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1os0n")
+
+[node name="LeftPlacementChecker" parent="." unique_id=1327250746 instance=ExtResource("3_pglbh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPlacementChecker" unique_id=1546994929]
+position = Vector2(-33, 14.5)
+shape = SubResource("RectangleShape2D_2ku1j")
+
+[node name="RightPlacementChecker" parent="." unique_id=136693569 instance=ExtResource("3_pglbh")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RightPlacementChecker" unique_id=923552322]
+position = Vector2(26.82, 14.5)
+shape = SubResource("RectangleShape2D_pglbh")
+
+[node name="PlacementChecker" parent="." unique_id=1753617043 instance=ExtResource("3_pglbh")]
+collision_mask = 1
+isReverse = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementChecker" unique_id=437414683]
+position = Vector2(-0.5, -7.5)
+shape = SubResource("RectangleShape2D_8nlcp")
+
+[node name="GrabArea" parent="." unique_id=506054645 node_paths=PackedStringArray("target") instance=ExtResource("4_a78gx")]
+target = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=216259263]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_gloqp")
+debug_color = Color(0.430468, 0, 0.106185265, 0.41960785)
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

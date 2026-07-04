@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://ct7rn8x3oy06s"]
+
+[ext_resource type="Script" uid="uid://c0koc65plxmei" path="res://scenes/toys/hefbrug/hefbrug.gd" id="1_88gru"]
+[ext_resource type="Texture2D" uid="uid://dcvewg3p05mag" path="res://scenes/toys/hefbrug/katrol.png" id="1_ihqox"]
+[ext_resource type="Texture2D" uid="uid://cort81k7qdsmn" path="res://scenes/toys/hefbrug/touw_open.png" id="2_qqri5"]
+[ext_resource type="Texture2D" uid="uid://d0jfmoi2i8s5v" path="res://scenes/toys/hefbrug/paal.png" id="3_u1l1o"]
+[ext_resource type="Texture2D" uid="uid://dsd56bew3x3ok" path="res://scenes/toys/hefbrug/wegdek_open.png" id="4_88gru"]
+[ext_resource type="Texture2D" uid="uid://crwkan6xxccla" path="res://scenes/toys/hefbrug/Begin.png" id="5_jai2r"]
+[ext_resource type="Texture2D" uid="uid://bgev0r1ai10bk" path="res://scenes/toys/hefbrug/Eind.png" id="6_vvk1k"]
+[ext_resource type="PackedScene" uid="uid://cgjr2ijplhlqk" path="res://scenes/util/grab_area/grab_area.tscn" id="8_jai2r"]
+[ext_resource type="PackedScene" uid="uid://dpslc32nt4ss5" path="res://scenes/util/placement_checker/placement_checker.tscn" id="10_vvk1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
+size = Vector2(166, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqc7i"]
+size = Vector2(124, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nlcp"]
+size = Vector2(128, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gloqp"]
+size = Vector2(388, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_er1kg"]
+size = Vector2(124, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq3gy"]
+size = Vector2(128, 23)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1os0n"]
+radius = 22.0
+
+[sub_resource type="Animation" id="Animation_jai2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Brug:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.7766715]
+}
+
+[sub_resource type="Animation" id="Animation_vvk1k"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Brug:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.7766715, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_viirn"]
+_data = {
+&"RESET": SubResource("Animation_jai2r"),
+&"open": SubResource("Animation_vvk1k")
+}
+
+[node name="Hefbrug" type="CharacterBody2D" unique_id=1177018507]
+script = ExtResource("1_88gru")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=617677716]
+
+[node name="Katrol" type="Sprite2D" parent="." unique_id=879319580]
+position = Vector2(-35, -30)
+texture = ExtResource("1_ihqox")
+
+[node name="TouwOpen" type="Sprite2D" parent="." unique_id=1362146864]
+position = Vector2(72, -87)
+texture = ExtResource("2_qqri5")
+
+[node name="Paal" type="Sprite2D" parent="." unique_id=1682867288]
+position = Vector2(56, -76)
+texture = ExtResource("3_u1l1o")
+
+[node name="Brug" type="CharacterBody2D" parent="." unique_id=651630609]
+position = Vector2(65, -15.999998)
+rotation = -0.7766715
+collision_layer = 3
+collision_mask = 7
+
+[node name="WegdekOpen" type="Sprite2D" parent="Brug" unique_id=715319728]
+position = Vector2(79, 1)
+rotation = 0.74176496
+texture = ExtResource("4_88gru")
+
+[node name="BrugCollider" type="CollisionShape2D" parent="Brug" unique_id=2085994931]
+unique_name_in_owner = true
+position = Vector2(79, 0.5)
+shape = SubResource("RectangleShape2D_1os0n")
+disabled = true
+
+[node name="Begin" type="Sprite2D" parent="." unique_id=364316252]
+position = Vector2(16, -10)
+texture = ExtResource("5_jai2r")
+
+[node name="Eind" type="Sprite2D" parent="." unique_id=1059555703]
+position = Vector2(262, -10)
+texture = ExtResource("6_vvk1k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1303562836]
+position = Vector2(16, -10)
+shape = SubResource("RectangleShape2D_bqc7i")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1872737706]
+position = Vector2(262, -10)
+shape = SubResource("RectangleShape2D_8nlcp")
+disabled = true
+
+[node name="GrabArea" parent="." unique_id=506054645 node_paths=PackedStringArray("target") instance=ExtResource("8_jai2r")]
+target = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=1618183466]
+position = Vector2(138, -67.5)
+shape = SubResource("RectangleShape2D_gloqp")
+
+[node name="PlacementChecker" parent="." unique_id=1327250746 instance=ExtResource("10_vvk1k")]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlacementChecker" unique_id=940200122]
+position = Vector2(16, -2.5)
+shape = SubResource("RectangleShape2D_er1kg")
+
+[node name="PlacementChecker2" parent="." unique_id=530766920 instance=ExtResource("10_vvk1k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementChecker2" unique_id=1549621851]
+position = Vector2(262, -1.5)
+shape = SubResource("RectangleShape2D_lq3gy")
+
+[node name="ActivationArea" type="Area2D" parent="." unique_id=1061136033]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea" unique_id=465416635]
+position = Vector2(-35, -42)
+shape = SubResource("CircleShape2D_1os0n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1451493184]
+libraries/ = SubResource("AnimationLibrary_viirn")
+
+[connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
