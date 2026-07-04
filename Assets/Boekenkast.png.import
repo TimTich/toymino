@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c75x2p23g4piy"
-path="res://.godot/imported/Book serie klein.png-5b5477cc39b90dde8f50f1d42484ad4e.ctex"
+uid="uid://buxy5mw78e7n"
+path="res://.godot/imported/Boekenkast.png-e13bb22fb85257bc664607cc188055b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/environment/Book serie klein.png"
-dest_files=["res://.godot/imported/Book serie klein.png-5b5477cc39b90dde8f50f1d42484ad4e.ctex"]
+source_file="res://Assets/Boekenkast.png"
+dest_files=["res://.godot/imported/Boekenkast.png-e13bb22fb85257bc664607cc188055b6.ctex"]
 
 [params]
 

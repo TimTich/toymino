@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var isFirst := false
 @export var tipImpulse := Vector2(100, 0)
 var isFallen := false
+signal has_fallen(domino: Domino)
 @export_range(0, 90) var fallThreshold := 40.0
 @onready var check_fall_state_timer: Timer = %CheckFallStateTimer
 @onready var tipping_point: Marker2D = %TippingPoint
@@ -20,3 +21,4 @@ func check_fall_state() -> void:
 	if abs(rotation_degrees) > fallThreshold:
 		isFallen = true
 		check_fall_state_timer.queue_free()
+		has_fallen.emit(self)

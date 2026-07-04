@@ -68,6 +68,8 @@ _data = {
 }
 
 [node name="Hefbrug" type="CharacterBody2D" unique_id=1177018507]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_88gru")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=617677716]
@@ -141,6 +143,7 @@ shape = SubResource("RectangleShape2D_lq3gy")
 [node name="ActivationArea" type="Area2D" parent="." unique_id=1061136033]
 collision_layer = 0
 collision_mask = 2
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea" unique_id=465416635]
 position = Vector2(-35, -42)

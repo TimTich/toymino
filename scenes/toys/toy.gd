@@ -21,6 +21,8 @@ func enter_play() -> void:
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = false
+	for checker in placementCheckers:
+		checker.monitoring = false
 	entered_play.emit()
 
 func _input(event: InputEvent) -> void:
