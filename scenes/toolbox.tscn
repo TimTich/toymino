@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cxwi3y1ed04ae"]
+
+[ext_resource type="Script" uid="uid://ddd8i4rcoi4jy" path="res://scenes/toolbox.gd" id="1_i4si1"]
+
+[sub_resource type="Gradient" id="Gradient_r7a1c"]
+colors = PackedColorArray(0.078200005, 0.10874338, 0.34, 1, 0.078431375, 0.10980392, 0.34117648, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sqs0x"]
+gradient = SubResource("Gradient_r7a1c")
+width = 130
+height = 141
+
+[sub_resource type="Gradient" id="Gradient_vy400"]
+colors = PackedColorArray(0.14030002, 0.19509842, 0.61, 1, 0.14117648, 0.19607843, 0.6117647, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bqc7i"]
+gradient = SubResource("Gradient_vy400")
+width = 266
+height = 647
+
+[sub_resource type="Gradient" id="Gradient_eaymk"]
+colors = PackedColorArray(0.078200005, 0.10874338, 0.34, 1, 0.078431375, 0.10980392, 0.34117648, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8n8es"]
+gradient = SubResource("Gradient_eaymk")
+width = 150
+height = 600
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
+size = Vector2(267.5, 649.5)
+
+[node name="Toolbox" type="Node2D" unique_id=937079641]
+script = ExtResource("1_i4si1")
+
+[node name="Handle" type="Sprite2D" parent="." unique_id=1008998314]
+position = Vector2(-69, 4)
+texture = SubResource("GradientTexture2D_sqs0x")
+
+[node name="Box" type="Sprite2D" parent="." unique_id=363399291]
+position = Vector2(37, 0.5)
+texture = SubResource("GradientTexture2D_bqc7i")
+
+[node name="Inside" type="Sprite2D" parent="." unique_id=929772396]
+position = Vector2(9, -1.5)
+texture = SubResource("GradientTexture2D_8n8es")
+
+[node name="ToyChecker" type="Area2D" parent="." unique_id=741027350]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToyChecker" unique_id=1271831883]
+position = Vector2(38.25, 0.75)
+shape = SubResource("RectangleShape2D_1os0n")
+
+[connection signal="area_exited" from="ToyChecker" to="." method="_on_toy_checker_area_exited"]

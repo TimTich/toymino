@@ -101,6 +101,7 @@ position = Vector2(-0.5, -7.5)
 shape = SubResource("RectangleShape2D_8nlcp")
 
 [node name="GrabArea" parent="." unique_id=506054645 node_paths=PackedStringArray("target") instance=ExtResource("4_a78gx")]
+collision_layer = 3
 target = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=216259263]
