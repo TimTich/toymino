@@ -7,6 +7,7 @@ var dominos: Array[Domino] = []
 @export var celebrations: Array[Celebrations] = []
 
 signal level_complete()
+@onready var juichen: AudioStreamPlayer2D = $Juichen
 
 func _ready() -> void:
 	for child in objectsNode.get_children():
@@ -20,7 +21,7 @@ func handle_fallen_domino(domino: Domino) -> void:
 		dominos.remove_at(index)
 	
 	if dominos.size() == 0:
-		print("LEVEL COMPLETE")
+		juichen.play()
 		level_complete.emit()
 		celebrate()
 

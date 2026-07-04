@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bahrmehw240qs" path="res://scenes/toys/ball/Bal.png" id="1_vb10y"]
 [ext_resource type="PackedScene" uid="uid://cgjr2ijplhlqk" path="res://scenes/util/grab_area/grab_area.tscn" id="2_wq72s"]
 [ext_resource type="PackedScene" uid="uid://dpslc32nt4ss5" path="res://scenes/util/placement_checker/placement_checker.tscn" id="4_6bc6i"]
+[ext_resource type="AudioStream" uid="uid://cshyrflxsyojk" path="res://scenes/toys/ball/BallBounce.wav" id="5_4vqgj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovev1"]
 friction = 0.5
@@ -26,6 +27,8 @@ collision_layer = 3
 collision_mask = 3
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_ovev1")
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_eq1l8")
 rigidbody = NodePath(".")
 
@@ -55,3 +58,7 @@ shape = SubResource("CircleShape2D_8nlcp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementChecker2" unique_id=1206909898]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_lq3gy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1851444859]
+stream = ExtResource("5_4vqgj")
+volume_db = 12.0

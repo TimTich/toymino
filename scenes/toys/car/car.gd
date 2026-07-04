@@ -9,6 +9,7 @@ var isActivated := false
 @export var rigidbody: RigidBody2D
 
 @onready var detection_area: Area2D = %DetectionArea
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	super()
@@ -27,6 +28,7 @@ func _input(event: InputEvent) -> void:
 
 func activate() -> void:
 	isActivated = true
+	audio_stream_player_2d.play()
 	activationTimer.start()
 	rigidbody.add_constant_force(Vector2(speed, 0))
 
