@@ -52,6 +52,7 @@ position = Vector2(526, 522)
 [node name="Ball" parent="Level1" unique_id=710849021 instance=ExtResource("5_d3jkd")]
 position = Vector2(452, 384)
 can_sleep = false
+freeze = true
 
 [node name="Domino5" parent="Level1" unique_id=246086847 instance=ExtResource("2_ejswk")]
 position = Vector2(600, 532)

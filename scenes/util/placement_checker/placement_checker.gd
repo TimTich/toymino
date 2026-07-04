@@ -24,6 +24,4 @@ func _on_body_exited(body: Node2D) -> void:
 	stateChanged.emit()
 
 func check_legality() -> void:
-	if isReverse:
-		print(containingBodies)
 	isLegal = containingBodies.is_empty() if isReverse else not containingBodies.is_empty()

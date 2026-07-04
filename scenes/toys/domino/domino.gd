@@ -19,5 +19,4 @@ func tip_piece() -> void:
 func check_fall_state() -> void:
 	if abs(rotation_degrees) > fallThreshold:
 		isFallen = true
-		print_debug(str(self) + " has fallen.")
 		check_fall_state_timer.queue_free()
