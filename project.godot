@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="toymino"
-run/main_scene="uid://bwstegqqrrj3m"
+run/main_scene="uid://dv0jyh8rw0xi6"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
