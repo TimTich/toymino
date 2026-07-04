@@ -5,6 +5,7 @@ extends Area2D
 var default_layer: int
 var default_mask: int
 
+var hasbeenGrabbed := false
 var isGrabbing := false
 
 func _ready() -> void:
@@ -20,6 +21,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		grab()
 	if event.is_action_released("select"):
 		release()
+		if hasbeenGrabbed:
+			target.handle_legality()
 
 func _physics_process(_delta: float) -> void:
 	if isGrabbing:
@@ -27,6 +30,7 @@ func _physics_process(_delta: float) -> void:
 
 func grab() -> void:
 	isGrabbing = true
+	hasbeenGrabbed = true
 	target.collision_layer = 0
 	target.light_mask = 0
 

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="5_pdma0"]
 [ext_resource type="Texture2D" uid="uid://65m2fvponf5p" path="res://Assets/Boek stapel 2.png" id="5_u2cfn"]
 [ext_resource type="PackedScene" uid="uid://bd72ravr51va2" path="res://scenes/toys/car/car.tscn" id="6_1jijn"]
+[ext_resource type="PackedScene" uid="uid://cxwi3y1ed04ae" path="res://scenes/toolbox.tscn" id="7_lr1ra"]
 [ext_resource type="PackedScene" uid="uid://dnra01utspb" path="res://scenes/environment/helling_middel/helling_middel.tscn" id="8_nq5j5"]
 [ext_resource type="PackedScene" uid="uid://ct7rn8x3oy06s" path="res://scenes/toys/hefbrug/hefbrug.tscn" id="8_ts5l0"]
 [ext_resource type="PackedScene" uid="uid://2trykf1six1w" path="res://scenes/environment/dozen/kort/opbergdozen_kort.tscn" id="9_nq5j5"]
@@ -94,6 +95,9 @@ texture = ExtResource("5_u2cfn")
 
 [node name="Objects" type="Node" parent="." unique_id=231676169]
 
+[node name="Toolbox" parent="Objects" unique_id=937079641 instance=ExtResource("7_lr1ra")]
+position = Vector2(1561, 342)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Objects" unique_id=189274120]
 position = Vector2(-123, 657)
 scale = Vector2(4.88, 1)
@@ -132,7 +136,7 @@ position = Vector2(26, 571)
 position = Vector2(223, 616)
 
 [node name="Ball" parent="Objects" unique_id=710849021 instance=ExtResource("5_pdma0")]
-position = Vector2(330, 425)
+position = Vector2(1594, 513)
 can_sleep = false
 freeze = true
 
@@ -149,10 +153,10 @@ position = Vector2(364, 626)
 position = Vector2(396, 626)
 
 [node name="Car" parent="Objects" unique_id=1451795916 instance=ExtResource("6_1jijn")]
-position = Vector2(552, 443)
+position = Vector2(1587, 362)
 
 [node name="Hefbrug" parent="Objects" unique_id=387914154 instance=ExtResource("8_ts5l0")]
-position = Vector2(996, 292)
+position = Vector2(1511, 209)
 scale = Vector2(0.5, 0.5)
 
 [node name="HellingMiddel" parent="Objects" unique_id=1422458205 instance=ExtResource("8_nq5j5")]

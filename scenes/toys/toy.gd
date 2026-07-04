@@ -14,7 +14,6 @@ func _ready() -> void:
 			placementCheckers.append(child)
 			child.stateChanged.connect(_on_placement_checker_state_changed)
 	check_legality()
-	handle_legality()
 
 func enter_play() -> void:
 	isInPlay = true
