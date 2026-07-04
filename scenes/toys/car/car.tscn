@@ -34,11 +34,13 @@ size = Vector2(119, 39)
 size = Vector2(108, 39)
 
 [node name="Car" type="RigidBody2D" unique_id=1546457409 node_paths=PackedStringArray("rigidbody")]
+collision_layer = 3
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_p4ltx")
 can_sleep = false
 freeze = true
 script = ExtResource("1_p4ltx")
+speed = 500.0
 rigidbody = NodePath(".")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=926077010]

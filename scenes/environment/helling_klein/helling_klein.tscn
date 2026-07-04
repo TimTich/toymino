@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c4bqsjq2quiq1"]
+
+[ext_resource type="Texture2D" uid="uid://4usrlwrpf110" path="res://scenes/environment/helling_klein/Helling klein.png" id="1_skmsl"]
+
+[node name="HellingKlein" type="StaticBody2D" unique_id=1429074296]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1193121186]
+texture = ExtResource("1_skmsl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1313719765]
+polygon = PackedVector2Array(60, -30, 60, 30, -60, 30)

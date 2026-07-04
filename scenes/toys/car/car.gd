@@ -15,9 +15,12 @@ func enter_play() -> void:
 	detection_area.monitoring = true
 	rigidbody.freeze = false
 
-func _physics_process(_delta: float) -> void:
-	if isActivated:
-		rigidbody.apply_force(Vector2(speed, 0))
+#func _physics_process(_delta: float) -> void:
+	#if isActivated:
+		#rigidbody.add_constant_force(Vector2(speed, 0))
 
 func _on_detection_area_body_entered(_body: Node2D) -> void:
+	if _body == self:
+		return
 	isActivated = true
+	rigidbody.add_constant_force(Vector2(speed, 0))
