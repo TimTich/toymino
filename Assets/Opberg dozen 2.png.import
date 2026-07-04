@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://65m2fvponf5p"
-path="res://.godot/imported/Boek stapel 2.png-aa124576aa89dbe824c1bca4f70058e1.ctex"
+uid="uid://bkff6inhd8ufv"
+path="res://.godot/imported/Opberg dozen 2.png-b823076afbfc8a7264533f97d6ee6c98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/environment/Boek stapel 2.png"
-dest_files=["res://.godot/imported/Boek stapel 2.png-aa124576aa89dbe824c1bca4f70058e1.ctex"]
+source_file="res://Assets/Opberg dozen 2.png"
+dest_files=["res://.godot/imported/Opberg dozen 2.png-b823076afbfc8a7264533f97d6ee6c98.ctex"]
 
 [params]
 

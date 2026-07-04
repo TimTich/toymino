@@ -33,14 +33,15 @@ size = Vector2(119, 39)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gloqp"]
 size = Vector2(108, 39)
 
-[node name="Car" type="RigidBody2D" unique_id=1546457409 node_paths=PackedStringArray("rigidbody")]
+[node name="Car" type="RigidBody2D" unique_id=1546457409 node_paths=PackedStringArray("activationTimer", "rigidbody")]
 collision_layer = 3
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_p4ltx")
 can_sleep = false
 freeze = true
 script = ExtResource("1_p4ltx")
-speed = 500.0
+activationTime = 1.75
+activationTimer = NodePath("ActivationTimer")
 rigidbody = NodePath(".")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=926077010]
@@ -106,5 +107,7 @@ target = NodePath("..")
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_gloqp")
 debug_color = Color(0.430468, 0, 0.106185265, 0.41960785)
+
+[node name="ActivationTimer" type="Timer" parent="." unique_id=2085670641]
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

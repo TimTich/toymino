@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3mhfsx5sm02m"
-path="res://.godot/imported/Opberg dozen 1.png-5615e30ad8e0c501056ae3298129ef0b.ctex"
+uid="uid://kqp1g2jbjek3"
+path="res://.godot/imported/Helling middel.png-42ae23f0663cefd76ea87aba9ed61baf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/environment/Opberg dozen 1.png"
-dest_files=["res://.godot/imported/Opberg dozen 1.png-5615e30ad8e0c501056ae3298129ef0b.ctex"]
+source_file="res://scenes/environment/helling_middel/Helling middel.png"
+dest_files=["res://.godot/imported/Helling middel.png-42ae23f0663cefd76ea87aba9ed61baf.ctex"]
 
 [params]
 

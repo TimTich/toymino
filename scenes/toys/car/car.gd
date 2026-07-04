@@ -1,26 +1,39 @@
 class_name Car
 extends Toy
 
-@export var speed := 100.00
+@export var speed := 500.00
+@export var activationTime := 1.5
+@export var activationTimer: Timer
 var isActivated := false
 
 @export var rigidbody: RigidBody2D
 
 @onready var detection_area: Area2D = %DetectionArea
 
+func _ready() -> void:
+	super()
+	activationTimer.wait_time = activationTime
+	activationTimer.timeout.connect(deactivate)
+
 func enter_play() -> void:
 	super()
-	for checker in placementCheckers:
-		checker.monitoring = false
 	detection_area.monitoring = true
 	rigidbody.freeze = false
 
-#func _physics_process(_delta: float) -> void:
-	#if isActivated:
-		#rigidbody.add_constant_force(Vector2(speed, 0))
+func _input(event: InputEvent) -> void:
+	super(event)
+	if event.is_action_pressed("ui_cancel"):
+		rigidbody.apply_force(Vector2(speed * 10, 0))
+
+func activate() -> void:
+	isActivated = true
+	activationTimer.start()
+	rigidbody.add_constant_force(Vector2(speed, 0))
+
+func deactivate() -> void:
+	rigidbody.constant_force = Vector2(0, 0)
 
 func _on_detection_area_body_entered(_body: Node2D) -> void:
-	if _body == self:
+	if _body == self or isActivated:
 		return
-	isActivated = true
-	rigidbody.add_constant_force(Vector2(speed, 0))
+	activate()
