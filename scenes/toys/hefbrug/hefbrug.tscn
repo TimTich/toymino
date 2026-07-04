@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://crwkan6xxccla" path="res://scenes/toys/hefbrug/Begin.png" id="5_jai2r"]
 [ext_resource type="Texture2D" uid="uid://bgev0r1ai10bk" path="res://scenes/toys/hefbrug/Eind.png" id="6_vvk1k"]
 [ext_resource type="PackedScene" uid="uid://cgjr2ijplhlqk" path="res://scenes/util/grab_area/grab_area.tscn" id="8_jai2r"]
+[ext_resource type="AudioStream" uid="uid://cn2pobjiadopu" path="res://scenes/toys/hefbrug/Drawbridge.wav" id="10_viirn"]
 [ext_resource type="PackedScene" uid="uid://dpslc32nt4ss5" path="res://scenes/util/placement_checker/placement_checker.tscn" id="10_vvk1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
@@ -45,6 +46,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [-0.7766715]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_vvk1k"]
 resource_name = "open"
@@ -59,6 +72,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-0.7766715, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_viirn"]
@@ -152,5 +177,8 @@ shape = SubResource("CircleShape2D_1os0n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1451493184]
 libraries/ = SubResource("AnimationLibrary_viirn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=105334086]
+stream = ExtResource("10_viirn")
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
