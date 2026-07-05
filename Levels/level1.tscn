@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dpkrj8l6jev12" path="res://Assets/Raam.png" id="1_utqd4"]
 [ext_resource type="PackedScene" uid="uid://c66svb00pd7n5" path="res://scenes/toys/domino/domino.tscn" id="2_nq5j5"]
 [ext_resource type="Texture2D" uid="uid://2jqiyys2mlaf" path="res://Assets/Book serie groot.png" id="3_20gr8"]
-[ext_resource type="PackedScene" uid="uid://ctkg5mnpx1f1f" path="res://scenes/environment/tafel/tafel.tscn" id="3_utqd4"]
+[ext_resource type="PackedScene" uid="uid://sm8kwjevn4jf" path="res://scenes/environment/tafel/tafel.tscn" id="3_utqd4"]
 [ext_resource type="Texture2D" uid="uid://c75x2p23g4piy" path="res://Assets/Book serie klein.png" id="4_ts5l0"]
 [ext_resource type="PackedScene" uid="uid://dhi84ownjbe5o" path="res://scenes/environment/trap_klein/trap_klein.tscn" id="4_u55on"]
 [ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="5_pdma0"]
@@ -136,7 +136,7 @@ position = Vector2(122, 476)
 tipImpulse = Vector2(70, 0)
 
 [node name="Tafel" parent="Objects" unique_id=833002844 instance=ExtResource("3_utqd4")]
-position = Vector2(26, 571)
+position = Vector2(26, 553)
 
 [node name="TrapKlein" parent="Objects" unique_id=888224850 instance=ExtResource("4_u55on")]
 position = Vector2(223, 616)

@@ -1,17 +1,18 @@
-[gd_scene format=3 uid="uid://ctkg5mnpx1f1f"]
+[gd_scene format=3 uid="uid://sm8kwjevn4jf"]
 
-[ext_resource type="Texture2D" uid="uid://b4wymh0nuybs3" path="res://scenes/environment/tafel/Tafel.png" id="1_pf8h7"]
+[ext_resource type="Texture2D" uid="uid://b4wymh0nuybs3" path="res://scenes/environment/tafel/Tafel.png" id="1_flt6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
 size = Vector2(300, 20)
 
-[node name="Tafel" type="StaticBody2D" unique_id=833002844]
+[node name="statafel" type="StaticBody2D" unique_id=833002844]
 collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=531060691]
-position = Vector2(0, -65)
+position = Vector2(2, -47)
 shape = SubResource("RectangleShape2D_1os0n")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1559617383]
 z_index = 1
-texture = ExtResource("1_pf8h7")
+position = Vector2(2, 18)
+texture = ExtResource("1_flt6e")

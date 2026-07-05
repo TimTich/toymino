@@ -42,4 +42,4 @@ func _on_reset_pressed():
 	get_tree().reload_current_scene()
 
 func _on_advance_pressed():
-		get_tree().change_scene_to_file('res://Levels/level4.tscn')
+		get_tree().change_scene_to_file('res://Levels/level3.tscn')
