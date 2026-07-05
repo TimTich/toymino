@@ -140,20 +140,20 @@ shape = SubResource("RectangleShape2D_oqjyl")
 [node name="Reset" type="Button" parent="Objects" unique_id=1177282971]
 visible = false
 z_index = 5
-offset_left = 1424.0
-offset_top = -245.0
-offset_right = 1670.0
-offset_bottom = -161.0
+offset_left = 646.0
+offset_top = 259.0
+offset_right = 746.0
+offset_bottom = 306.0
 theme_override_font_sizes/font_size = 28
 text = "Reset"
 
 [node name="Advance" type="Button" parent="Objects" unique_id=78249692]
 visible = false
 z_index = 5
-offset_left = 1424.0
-offset_top = -245.0
-offset_right = 1670.0
-offset_bottom = -161.0
+offset_left = 623.0
+offset_top = 259.0
+offset_right = 766.0
+offset_bottom = 306.0
 theme_override_font_sizes/font_size = 28
 text = "Next level"
 
@@ -203,10 +203,10 @@ autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="Camera2D/Tutorial" unique_id=1410703708]
 custom_maximum_size = Vector2(300, -1)
-offset_left = 377.0
-offset_top = 69.0
-offset_right = 673.0
-offset_bottom = 118.0
+offset_left = 378.0
+offset_top = 135.0
+offset_right = 674.0
+offset_bottom = 184.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -215,11 +215,12 @@ Make sure they all fall."
 autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="Camera2D/Tutorial" unique_id=1365780230]
+visible = false
 custom_maximum_size = Vector2(300, -1)
-offset_left = 376.0
-offset_top = 121.0
-offset_right = 672.0
-offset_bottom = 170.0
+offset_left = 377.0
+offset_top = 187.0
+offset_right = 673.0
+offset_bottom = 236.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -249,3 +250,6 @@ random_time = 0.25
 [node name="Juichen" type="AudioStreamPlayer2D" parent="." unique_id=697011870]
 stream = ExtResource("7_wkmw0")
 volume_db = 10.0
+
+[connection signal="pressed" from="Objects/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Objects/Advance" to="." method="_on_advance_pressed"]
