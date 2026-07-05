@@ -63,5 +63,5 @@ func _on_advance_pressed():
 			print("ChangeTo: " + changeTo)
 		i += 1
 		if (currentLevel == "level5"):
-			changeTo = "title_screen"
+			changeTo = "EndScreen"
 	get_tree().change_scene_to_file("res://levels/" + changeTo + ".tscn")
