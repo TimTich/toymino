@@ -249,5 +249,5 @@ random_time = 0.25
 stream = ExtResource("18_r7a1c")
 volume_db = 10.0
 
-[connection signal="pressed" from="Objects/Reset" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Objects/Advance" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Objects/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Objects/Advance" to="." method="_on_advance_pressed"]
