@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://bun0cm468iinu"]
+
+[ext_resource type="Script" uid="uid://d2hxyfr6gu15u" path="res://Levels/end_screen.gd" id="1_rh1pl"]
+[ext_resource type="Texture2D" uid="uid://buxy5mw78e7n" path="res://Assets/Boekenkast.png" id="2_ja7tp"]
+[ext_resource type="Texture2D" uid="uid://dpkrj8l6jev12" path="res://Assets/Raam.png" id="3_biwvd"]
+[ext_resource type="Texture2D" uid="uid://2jqiyys2mlaf" path="res://Assets/Book serie groot.png" id="4_ayn34"]
+[ext_resource type="Texture2D" uid="uid://c75x2p23g4piy" path="res://Assets/Book serie klein.png" id="5_sik4p"]
+[ext_resource type="Texture2D" uid="uid://65m2fvponf5p" path="res://Assets/Boek stapel 2.png" id="6_gc3f8"]
+[ext_resource type="Texture2D" uid="uid://bkff6inhd8ufv" path="res://Assets/Opberg dozen 2.png" id="7_lm2dk"]
+[ext_resource type="Texture2D" uid="uid://chsuvq0ajaae3" path="res://icon.svg" id="9_7jh7g"]
+[ext_resource type="PackedScene" uid="uid://bnm3x0v6l3csc" path="res://Levels/celebrations.tscn" id="22_b2jfy"]
+[ext_resource type="AudioStream" uid="uid://ca2bs4gk5tshm" path="res://Assets/juichen.mp3" id="23_pmjnc"]
+
+[sub_resource type="Gradient" id="Gradient_r7a1c"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.98312235, 0.9915612, 1)
+colors = PackedColorArray(0.89254254, 0.79288685, 0.59733456, 1, 0.76433975, 0.7944393, 0.961876, 1, 0.99543315, 0.9608939, 0.9495655, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ts5l0"]
+gradient = SubResource("Gradient_r7a1c")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_sqs0x"]
+offsets = PackedFloat32Array(0.9915612, 1)
+colors = PackedColorArray(0.76433975, 0.7944393, 0.961876, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1os0n"]
+gradient = SubResource("Gradient_sqs0x")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_vy400"]
+offsets = PackedFloat32Array(0.9915612, 1)
+colors = PackedColorArray(0.45000002, 0.5525, 0.6, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r7a1c"]
+gradient = SubResource("Gradient_vy400")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[node name="Level1" type="Node" unique_id=1563003557]
+script = ExtResource("1_rh1pl")
+
+[node name="Background" type="Node" parent="." unique_id=1977343865]
+
+[node name="Plint" type="Sprite2D" parent="Background" unique_id=1621650537]
+position = Vector2(810, -126)
+texture = SubResource("GradientTexture2D_ts5l0")
+
+[node name="Wall" type="Sprite2D" parent="Background" unique_id=46401714]
+position = Vector2(810, -159)
+texture = SubResource("GradientTexture2D_1os0n")
+
+[node name="Floor" type="Sprite2D" parent="Background" unique_id=1113439559]
+position = Vector2(810, 874)
+texture = SubResource("GradientTexture2D_r7a1c")
+
+[node name="Boekenkast" type="Sprite2D" parent="Background" unique_id=1752070082]
+position = Vector2(1066, 175)
+texture = ExtResource("2_ja7tp")
+
+[node name="OpbergDozen2" type="Sprite2D" parent="Background" unique_id=1987208945]
+position = Vector2(409, 380)
+texture = ExtResource("7_lm2dk")
+
+[node name="Raam" type="Sprite2D" parent="Background" unique_id=1347432712]
+position = Vector2(195, 64)
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("3_biwvd")
+
+[node name="BoekStapel2" type="Sprite2D" parent="Background" unique_id=335783810]
+position = Vector2(983.00006, 250.99998)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("6_gc3f8")
+
+[node name="BookSerieGroot" type="Sprite2D" parent="Background" unique_id=1925879692]
+position = Vector2(1010, 42)
+texture = ExtResource("4_ayn34")
+
+[node name="BookSerieKlein" type="Sprite2D" parent="Background" unique_id=1023163859]
+position = Vector2(1152, 181)
+texture = ExtResource("5_sik4p")
+
+[node name="Objects" type="Node" parent="." unique_id=231676169]
+
+[node name="Reset" type="Button" parent="Objects" unique_id=1935241504]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Reset"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects" unique_id=189274120]
+position = Vector2(-123, 657)
+scale = Vector2(4.88, 1)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/StaticBody2D" unique_id=1364646237]
+visible = false
+position = Vector2(393.99997, 26.499996)
+scale = Vector2(6.2499995, 0.5859375)
+texture = ExtResource("9_7jh7g")
+
+[node name="Advance" type="Button" parent="Objects" unique_id=630472940]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Main Menu"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1581496021]
+position = Vector2(841, 210)
+zoom = Vector2(0.685, 0.685)
+
+[node name="Celebrations" parent="." unique_id=731670017 instance=ExtResource("22_b2jfy")]
+position = Vector2(141, 165)
+random_time = 0.4
+
+[node name="Juichen" type="AudioStreamPlayer2D" parent="." unique_id=546844088]
+position = Vector2(84, 0)
+stream = ExtResource("23_pmjnc")
+volume_db = 10.0
+
+[node name="Celebrations2" parent="." unique_id=1814329911 instance=ExtResource("22_b2jfy")]
+position = Vector2(660, 212)
+random_time = 0.2
+
+[node name="Celebrations5" parent="." unique_id=2052061027 instance=ExtResource("22_b2jfy")]
+position = Vector2(1395, 492)
+random_time = 0.25
+
+[node name="Celebrations3" parent="." unique_id=842280036 instance=ExtResource("22_b2jfy")]
+position = Vector2(549, 588)
+random_time = 0.15
+
+[node name="Celebrations4" parent="." unique_id=354244823 instance=ExtResource("22_b2jfy")]
+position = Vector2(1155, 168)
+random_time = 0.05
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1099532502]
+offset_left = 219.0
+offset_top = -157.0
+offset_right = 1435.0
+offset_bottom = 620.0
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1739175524]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 1217.0
+offset_bottom = 441.0
+theme_override_font_sizes/font_size = 31
+text = "CONGRATIULATIONS!!!!!!!
+
+Thank you for playing our game!
+
+ART
+Emma Verweij
+
+LEVEL DESIGN
+Sem Betgen
+
+PROGRAMMING
+Eric Bull
+Timothy Tichelaar
+
+SOUND
+Mark Wilbrink"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Objects/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Objects/Advance" to="." method="_on_advance_pressed"]

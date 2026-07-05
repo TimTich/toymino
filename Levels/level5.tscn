@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://gq728s5hjxqy"]
+
+[ext_resource type="Script" uid="uid://dpq5kvvjbhckk" path="res://Levels/level.gd" id="1_78erw"]
+[ext_resource type="Texture2D" uid="uid://buxy5mw78e7n" path="res://Assets/Boekenkast.png" id="2_oqk4n"]
+[ext_resource type="Texture2D" uid="uid://dpkrj8l6jev12" path="res://Assets/Raam.png" id="3_y7h84"]
+[ext_resource type="Texture2D" uid="uid://2jqiyys2mlaf" path="res://Assets/Book serie groot.png" id="4_wobn1"]
+[ext_resource type="Texture2D" uid="uid://c75x2p23g4piy" path="res://Assets/Book serie klein.png" id="5_6gjww"]
+[ext_resource type="Texture2D" uid="uid://65m2fvponf5p" path="res://Assets/Boek stapel 2.png" id="6_4mhpv"]
+[ext_resource type="Texture2D" uid="uid://bkff6inhd8ufv" path="res://Assets/Opberg dozen 2.png" id="7_au86c"]
+[ext_resource type="PackedScene" uid="uid://cxwi3y1ed04ae" path="res://scenes/toolbox.tscn" id="8_4c51i"]
+[ext_resource type="Texture2D" uid="uid://chsuvq0ajaae3" path="res://icon.svg" id="9_de6t6"]
+[ext_resource type="PackedScene" uid="uid://c66svb00pd7n5" path="res://scenes/toys/domino/domino.tscn" id="10_mbr0u"]
+[ext_resource type="PackedScene" uid="uid://cl1dbpehn0h2k" path="res://scenes/toys/domino/dominoGeel.tscn" id="11_u5vnh"]
+[ext_resource type="PackedScene" uid="uid://sm8kwjevn4jf" path="res://scenes/environment/tafel/tafel.tscn" id="12_60poa"]
+[ext_resource type="PackedScene" uid="uid://dhi84ownjbe5o" path="res://scenes/environment/trap_klein/trap_klein.tscn" id="13_bb42h"]
+[ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="14_rjdms"]
+[ext_resource type="PackedScene" uid="uid://bd72ravr51va2" path="res://scenes/toys/car/car.tscn" id="15_jtuib"]
+[ext_resource type="PackedScene" uid="uid://bnkyy10w0121s" path="res://scenes/toys/balloon/balloon.tscn" id="16_ubgsj"]
+[ext_resource type="PackedScene" uid="uid://2trykf1six1w" path="res://scenes/environment/dozen/kort/opbergdozen_kort.tscn" id="18_p03ns"]
+[ext_resource type="PackedScene" uid="uid://uv4bxng3tsbi" path="res://scenes/toys/domino/dominoGroen.tscn" id="19_jlkmi"]
+[ext_resource type="PackedScene" uid="uid://bnm3x0v6l3csc" path="res://Levels/celebrations.tscn" id="21_nhwwn"]
+[ext_resource type="PackedScene" uid="uid://ct7rn8x3oy06s" path="res://scenes/toys/hefbrug/hefbrug.tscn" id="21_oqk4n"]
+[ext_resource type="AudioStream" uid="uid://ca2bs4gk5tshm" path="res://Assets/juichen.mp3" id="22_1448h"]
+[ext_resource type="PackedScene" uid="uid://c4bqsjq2quiq1" path="res://scenes/environment/helling_klein/helling_klein.tscn" id="22_y7h84"]
+[ext_resource type="PackedScene" uid="uid://cxsrc28i0dd32" path="res://scenes/environment/statafel/statafel.tscn" id="23_wobn1"]
+
+[sub_resource type="Gradient" id="Gradient_r7a1c"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.98312235, 0.9915612, 1)
+colors = PackedColorArray(0.89254254, 0.79288685, 0.59733456, 1, 0.76433975, 0.7944393, 0.961876, 1, 0.99543315, 0.9608939, 0.9495655, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ts5l0"]
+gradient = SubResource("Gradient_r7a1c")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_sqs0x"]
+offsets = PackedFloat32Array(0.9915612, 1)
+colors = PackedColorArray(0.76433975, 0.7944393, 0.961876, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1os0n"]
+gradient = SubResource("Gradient_sqs0x")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_vy400"]
+offsets = PackedFloat32Array(0.9915612, 1)
+colors = PackedColorArray(0.45000002, 0.5525, 0.6, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r7a1c"]
+gradient = SubResource("Gradient_vy400")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
+size = Vector2(800, 75)
+
+[node name="Level1" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
+script = ExtResource("1_78erw")
+objectsNode = NodePath("Objects")
+celebrations = [NodePath("Celebrations"), NodePath("Celebrations2"), NodePath("Celebrations3"), NodePath("Celebrations4"), NodePath("Celebrations5")]
+
+[node name="Background" type="Node" parent="." unique_id=1977343865]
+
+[node name="Plint" type="Sprite2D" parent="Background" unique_id=1621650537]
+position = Vector2(810, -126)
+texture = SubResource("GradientTexture2D_ts5l0")
+
+[node name="Wall" type="Sprite2D" parent="Background" unique_id=46401714]
+position = Vector2(810, -159)
+texture = SubResource("GradientTexture2D_1os0n")
+
+[node name="Floor" type="Sprite2D" parent="Background" unique_id=1113439559]
+position = Vector2(810, 874)
+texture = SubResource("GradientTexture2D_r7a1c")
+
+[node name="Boekenkast" type="Sprite2D" parent="Background" unique_id=1752070082]
+position = Vector2(1066, 175)
+texture = ExtResource("2_oqk4n")
+
+[node name="Raam" type="Sprite2D" parent="Background" unique_id=1347432712]
+position = Vector2(195, 64)
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("3_y7h84")
+
+[node name="BookSerieGroot" type="Sprite2D" parent="Background" unique_id=1925879692]
+position = Vector2(1010, 42)
+texture = ExtResource("4_wobn1")
+
+[node name="BookSerieKlein" type="Sprite2D" parent="Background" unique_id=1023163859]
+position = Vector2(1152, 181)
+texture = ExtResource("5_6gjww")
+
+[node name="BoekStapel2" type="Sprite2D" parent="Background" unique_id=335783810]
+position = Vector2(983.00006, 250.99998)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("6_4mhpv")
+
+[node name="OpbergDozen2" type="Sprite2D" parent="Background" unique_id=1987208945]
+position = Vector2(409, 380)
+texture = ExtResource("7_au86c")
+
+[node name="Objects" type="Node" parent="." unique_id=231676169]
+
+[node name="Toolbox" parent="Objects" unique_id=937079641 instance=ExtResource("8_4c51i")]
+position = Vector2(1561, 342)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects" unique_id=189274120]
+position = Vector2(-123, 657)
+scale = Vector2(4.88, 1)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/StaticBody2D" unique_id=1364646237]
+visible = false
+position = Vector2(393.99997, 26.499996)
+scale = Vector2(6.2499995, 0.5859375)
+texture = ExtResource("9_de6t6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D" unique_id=446575521]
+position = Vector2(394, 26.5)
+shape = SubResource("RectangleShape2D_1os0n")
+
+[node name="Domino" parent="Objects" unique_id=1991590098 instance=ExtResource("10_mbr0u")]
+position = Vector2(18, 505)
+isFirst = true
+
+[node name="Domino2" parent="Objects" unique_id=564463175 instance=ExtResource("10_mbr0u")]
+position = Vector2(639, 446)
+tipImpulse = Vector2(70, 0)
+
+[node name="Domino3" parent="Objects" unique_id=2104497383 instance=ExtResource("10_mbr0u")]
+position = Vector2(748, 446)
+tipImpulse = Vector2(70, 0)
+
+[node name="Domino4" parent="Objects" unique_id=524222818 instance=ExtResource("10_mbr0u")]
+position = Vector2(183, 505)
+tipImpulse = Vector2(70, 0)
+
+[node name="Domino6" parent="Objects" unique_id=1000686616 instance=ExtResource("11_u5vnh")]
+position = Vector2(43, 505)
+
+[node name="TrapKlein4" parent="Objects" unique_id=888224850 instance=ExtResource("13_bb42h")]
+position = Vector2(487, 585)
+scale = Vector2(2, 2)
+
+[node name="Tafel2" parent="Objects" unique_id=1732935489 instance=ExtResource("12_60poa")]
+position = Vector2(638, 522)
+
+[node name="TrapKlein" parent="Objects" unique_id=71027674 instance=ExtResource("13_bb42h")]
+position = Vector2(525, 630)
+scale = Vector2(0.5, 0.5)
+
+[node name="Ball" parent="Objects" unique_id=710849021 instance=ExtResource("14_rjdms")]
+position = Vector2(1620, 281)
+can_sleep = false
+freeze = true
+
+[node name="Car" parent="Objects" unique_id=1451795916 instance=ExtResource("15_jtuib")]
+position = Vector2(1570, 234)
+
+[node name="Balloon" parent="Objects" unique_id=292060754 instance=ExtResource("16_ubgsj")]
+position = Vector2(1601, 111)
+
+[node name="OpbergdozenKort" parent="Objects" unique_id=130070129 instance=ExtResource("18_p03ns")]
+position = Vector2(-22, 585)
+
+[node name="OpbergdozenKort2" parent="Objects" unique_id=27686437 instance=ExtResource("18_p03ns")]
+position = Vector2(301, 585)
+
+[node name="Domino9" parent="Objects" unique_id=194577253 instance=ExtResource("10_mbr0u")]
+position = Vector2(1095, 446)
+
+[node name="Domino11" parent="Objects" unique_id=417593669 instance=ExtResource("10_mbr0u")]
+position = Vector2(1377, 626)
+
+[node name="Domino12" parent="Objects" unique_id=1658133014 instance=ExtResource("10_mbr0u")]
+position = Vector2(1413, 626)
+
+[node name="Domino13" parent="Objects" unique_id=1990046644 instance=ExtResource("10_mbr0u")]
+position = Vector2(1342, 626)
+
+[node name="Domino8" parent="Objects" unique_id=1702461205 instance=ExtResource("11_u5vnh")]
+position = Vector2(778, 445)
+
+[node name="Domino14" parent="Objects" unique_id=1376023767 instance=ExtResource("19_jlkmi")]
+position = Vector2(507, 446)
+
+[node name="Domino15" parent="Objects" unique_id=504053074 instance=ExtResource("11_u5vnh")]
+position = Vector2(540, 446)
+
+[node name="Domino16" parent="Objects" unique_id=1152195096 instance=ExtResource("19_jlkmi")]
+position = Vector2(571, 446)
+
+[node name="Domino17" parent="Objects" unique_id=322234379 instance=ExtResource("11_u5vnh")]
+position = Vector2(604, 446)
+
+[node name="Domino18" parent="Objects" unique_id=712582464 instance=ExtResource("19_jlkmi")]
+position = Vector2(676, 446)
+
+[node name="Domino19" parent="Objects" unique_id=140930075 instance=ExtResource("11_u5vnh")]
+position = Vector2(711, 446)
+
+[node name="Domino21" parent="Objects" unique_id=147049538 instance=ExtResource("11_u5vnh")]
+position = Vector2(1063, 446)
+
+[node name="Reset" type="Button" parent="Objects" unique_id=1935241504]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Reset"
+
+[node name="Advance" type="Button" parent="Objects" unique_id=630472940]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Next level"
+
+[node name="Hefbrug" parent="Objects" unique_id=1177018507 instance=ExtResource("21_oqk4n")]
+position = Vector2(1515, 402)
+scale = Vector2(0.4, 0.4)
+
+[node name="HellingKlein" parent="Objects" unique_id=1429074296 instance=ExtResource("22_y7h84")]
+position = Vector2(430, 495)
+
+[node name="TrapKlein2" parent="Objects" unique_id=169643883 instance=ExtResource("13_bb42h")]
+position = Vector2(770, 632)
+scale = Vector2(0.5, 0.5)
+
+[node name="statafel" parent="Objects" unique_id=1337789126 instance=ExtResource("23_wobn1")]
+position = Vector2(1096, 542)
+scale = Vector2(1, 0.9)
+
+[node name="TrapKlein3" parent="Objects" unique_id=2101103151 instance=ExtResource("13_bb42h")]
+position = Vector2(1213, 586)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1581496021]
+position = Vector2(841, 210)
+zoom = Vector2(0.685, 0.685)
+
+[node name="Celebrations" parent="." unique_id=731670017 instance=ExtResource("21_nhwwn")]
+position = Vector2(141, 165)
+random_time = 0.4
+
+[node name="Celebrations2" parent="." unique_id=1814329911 instance=ExtResource("21_nhwwn")]
+position = Vector2(660, 212)
+random_time = 0.2
+
+[node name="Celebrations3" parent="." unique_id=842280036 instance=ExtResource("21_nhwwn")]
+position = Vector2(549, 588)
+random_time = 0.15
+
+[node name="Celebrations4" parent="." unique_id=354244823 instance=ExtResource("21_nhwwn")]
+position = Vector2(1155, 168)
+random_time = 0.05
+
+[node name="Celebrations5" parent="." unique_id=2052061027 instance=ExtResource("21_nhwwn")]
+position = Vector2(1395, 492)
+random_time = 0.25
+
+[node name="Juichen" type="AudioStreamPlayer2D" parent="." unique_id=546844088]
+position = Vector2(84, 0)
+stream = ExtResource("22_1448h")
+volume_db = 10.0
+
+[node name="Domino18" parent="." unique_id=2021158629 instance=ExtResource("19_jlkmi")]
+position = Vector2(211, 505)
+
+[connection signal="pressed" from="Objects/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Objects/Advance" to="." method="_on_advance_pressed"]
