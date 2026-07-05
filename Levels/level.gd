@@ -15,6 +15,10 @@ func _ready() -> void:
 			dominos.append(child)
 			child.has_fallen.connect(handle_fallen_domino)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("reset"):
+		get_tree().reload_current_scene()
+
 func handle_fallen_domino(domino: Domino) -> void:
 	var index = dominos.find(domino)
 	if index >= 0:
