@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hs3tt6imelmq"]
+[gd_scene format=3 uid="uid://dv0jyh8rw0xi6"]
 
 [ext_resource type="Script" uid="uid://7qm7rn2qry1d" path="res://Scripts/title_screen.gd" id="1_dk33w"]
 [ext_resource type="Texture2D" uid="uid://bg04egr0iu42e" path="res://Assets/wallpaper.jpg" id="2_rc3vr"]
@@ -127,16 +127,12 @@ popup/item_1/text = "Level 1"
 popup/item_1/id = 1
 popup/item_2/text = "Level 2"
 popup/item_2/id = 2
-popup/item_2/disabled = true
 popup/item_3/text = "Level 3"
 popup/item_3/id = 3
-popup/item_3/disabled = true
 popup/item_4/text = "Level 4"
 popup/item_4/id = 4
-popup/item_4/disabled = true
 popup/item_5/text = "Level 5"
 popup/item_5/id = 5
-popup/item_5/disabled = true
 
 [node name="DominoGeel" type="Sprite2D" parent="OptionButton" unique_id=1964212289]
 z_index = 1
