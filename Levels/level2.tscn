@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://wle0xwaoyt0g"]
+
+[ext_resource type="Script" uid="uid://dpq5kvvjbhckk" path="res://Levels/level.gd" id="1_u66px"]
+[ext_resource type="Texture2D" uid="uid://buxy5mw78e7n" path="res://Assets/Boekenkast.png" id="2_4idtp"]
+[ext_resource type="Texture2D" uid="uid://dpkrj8l6jev12" path="res://Assets/Raam.png" id="3_dpe6j"]
+[ext_resource type="Texture2D" uid="uid://2jqiyys2mlaf" path="res://Assets/Book serie groot.png" id="4_m8ou3"]
+[ext_resource type="Texture2D" uid="uid://c75x2p23g4piy" path="res://Assets/Book serie klein.png" id="5_odihm"]
+[ext_resource type="Texture2D" uid="uid://65m2fvponf5p" path="res://Assets/Boek stapel 2.png" id="6_vh8st"]
+[ext_resource type="PackedScene" uid="uid://cxwi3y1ed04ae" path="res://scenes/toolbox.tscn" id="7_plkcr"]
+[ext_resource type="Texture2D" uid="uid://chsuvq0ajaae3" path="res://icon.svg" id="8_ucg3d"]
+[ext_resource type="PackedScene" uid="uid://c66svb00pd7n5" path="res://scenes/toys/domino/domino.tscn" id="9_fn86y"]
+[ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="12_x0bbt"]
+[ext_resource type="PackedScene" uid="uid://bd72ravr51va2" path="res://scenes/toys/car/car.tscn" id="13_04wwc"]
+[ext_resource type="PackedScene" uid="uid://ct7rn8x3oy06s" path="res://scenes/toys/hefbrug/hefbrug.tscn" id="14_xghi6"]
+[ext_resource type="PackedScene" uid="uid://bnm3x0v6l3csc" path="res://Levels/celebrations.tscn" id="17_q1qjh"]
+[ext_resource type="AudioStream" uid="uid://ca2bs4gk5tshm" path="res://Assets/juichen.mp3" id="18_sguyg"]
+
+[sub_resource type="Gradient" id="Gradient_20gr8"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.98312235, 0.9915612, 1)
+colors = PackedColorArray(0.89254254, 0.79288685, 0.59733456, 1, 0.76433975, 0.7944393, 0.961876, 1, 0.99543315, 0.9608939, 0.9495655, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ts5l0"]
+gradient = SubResource("Gradient_20gr8")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_u2cfn"]
+offsets = PackedFloat32Array(0.9915612, 1)
+colors = PackedColorArray(0.76433975, 0.7944393, 0.961876, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1os0n"]
+gradient = SubResource("Gradient_u2cfn")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_lr1ra"]
+offsets = PackedFloat32Array(0.9915612, 1)
+colors = PackedColorArray(0.45000002, 0.5525, 0.6, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r7a1c"]
+gradient = SubResource("Gradient_lr1ra")
+width = 2000
+height = 1000
+fill_from = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
+size = Vector2(800, 75)
+
+[node name="Level2" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
+script = ExtResource("1_u66px")
+objectsNode = NodePath("Objects")
+celebrations = [NodePath("Celebrations"), NodePath("Celebrations2"), NodePath("Celebrations3"), NodePath("Celebrations4")]
+
+[node name="Background" type="Node" parent="." unique_id=1977343865]
+
+[node name="Plint" type="Sprite2D" parent="Background" unique_id=1621650537]
+position = Vector2(810, -126)
+texture = SubResource("GradientTexture2D_ts5l0")
+
+[node name="Wall" type="Sprite2D" parent="Background" unique_id=46401714]
+position = Vector2(810, -159)
+texture = SubResource("GradientTexture2D_1os0n")
+
+[node name="Floor" type="Sprite2D" parent="Background" unique_id=1113439559]
+position = Vector2(810, 874)
+texture = SubResource("GradientTexture2D_r7a1c")
+
+[node name="Boekenkast" type="Sprite2D" parent="Background" unique_id=1752070082]
+position = Vector2(1066, 175)
+texture = ExtResource("2_4idtp")
+
+[node name="Raam" type="Sprite2D" parent="Background" unique_id=1347432712]
+position = Vector2(195, 64)
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("3_dpe6j")
+
+[node name="BookSerieGroot" type="Sprite2D" parent="Background" unique_id=1925879692]
+position = Vector2(1010, 42)
+texture = ExtResource("4_m8ou3")
+
+[node name="BookSerieKlein" type="Sprite2D" parent="Background" unique_id=1023163859]
+position = Vector2(1152, 181)
+texture = ExtResource("5_odihm")
+
+[node name="BoekStapel2" type="Sprite2D" parent="Background" unique_id=335783810]
+position = Vector2(983.00006, 250.99998)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("6_vh8st")
+
+[node name="Objects" type="Node" parent="." unique_id=231676169]
+
+[node name="Toolbox" parent="Objects" unique_id=937079641 instance=ExtResource("7_plkcr")]
+position = Vector2(1561, 342)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects" unique_id=189274120]
+position = Vector2(-123, 657)
+scale = Vector2(4.88, 1)
+collision_layer = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/StaticBody2D" unique_id=1364646237]
+visible = false
+position = Vector2(393.99997, 26.499996)
+scale = Vector2(6.2499995, 0.5859375)
+texture = ExtResource("8_ucg3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D" unique_id=446575521]
+position = Vector2(394, 26.5)
+shape = SubResource("RectangleShape2D_1os0n")
+
+[node name="Domino" parent="Objects" unique_id=1991590098 instance=ExtResource("9_fn86y")]
+position = Vector2(1057, 416)
+isFirst = true
+
+[node name="Domino2" parent="Objects" unique_id=564463175 instance=ExtResource("9_fn86y")]
+position = Vector2(1118, 416)
+tipImpulse = Vector2(70, 0)
+
+[node name="Domino3" parent="Objects" unique_id=2104497383 instance=ExtResource("9_fn86y")]
+position = Vector2(1171, 416)
+tipImpulse = Vector2(70, 0)
+
+[node name="Domino4" parent="Objects" unique_id=524222818 instance=ExtResource("9_fn86y")]
+position = Vector2(1206, 411)
+tipImpulse = Vector2(70, 0)
+
+[node name="Ball" parent="Objects" unique_id=710849021 instance=ExtResource("12_x0bbt")]
+position = Vector2(1594, 513)
+can_sleep = false
+freeze = true
+
+[node name="Domino5" parent="Objects" unique_id=246086847 instance=ExtResource("9_fn86y")]
+position = Vector2(902, 428)
+
+[node name="Domino6" parent="Objects" unique_id=495719941 instance=ExtResource("9_fn86y")]
+position = Vector2(1019, 419)
+
+[node name="Domino7" parent="Objects" unique_id=495243564 instance=ExtResource("9_fn86y")]
+position = Vector2(938, 424)
+
+[node name="Domino8" parent="Objects" unique_id=1314929499 instance=ExtResource("9_fn86y")]
+position = Vector2(981, 417)
+
+[node name="Car" parent="Objects" unique_id=1451795916 instance=ExtResource("13_04wwc")]
+position = Vector2(1587, 362)
+
+[node name="Hefbrug" parent="Objects" unique_id=387914154 instance=ExtResource("14_xghi6")]
+position = Vector2(1508, 205)
+scale = Vector2(0.5, 0.5)
+
+[node name="Domino9" parent="Objects" unique_id=194577253 instance=ExtResource("9_fn86y")]
+position = Vector2(848, 506)
+
+[node name="Domino10" parent="Objects" unique_id=1994164323 instance=ExtResource("9_fn86y")]
+position = Vector2(882, 506)
+
+[node name="Domino11" parent="Objects" unique_id=417593669 instance=ExtResource("9_fn86y")]
+position = Vector2(914, 506)
+
+[node name="Domino12" parent="Objects" unique_id=1658133014 instance=ExtResource("9_fn86y")]
+position = Vector2(945, 506)
+
+[node name="Domino13" parent="Objects" unique_id=1990046644 instance=ExtResource("9_fn86y")]
+position = Vector2(973, 506)
+
+[node name="Domino14" parent="Objects" unique_id=2119334816 instance=ExtResource("9_fn86y")]
+position = Vector2(1129, 505)
+
+[node name="Domino15" parent="Objects" unique_id=1335872382 instance=ExtResource("9_fn86y")]
+position = Vector2(1162, 505)
+
+[node name="Domino16" parent="Objects" unique_id=1863563149 instance=ExtResource("9_fn86y")]
+position = Vector2(1191, 505)
+
+[node name="Domino17" parent="Objects" unique_id=885999643 instance=ExtResource("9_fn86y")]
+position = Vector2(1222, 505)
+
+[node name="Reset" type="Button" parent="Objects" unique_id=1935241504]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Reset"
+
+[node name="Advance" type="Button" parent="Objects" unique_id=630472940]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Next level"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1581496021]
+position = Vector2(841, 210)
+zoom = Vector2(0.685, 0.685)
+
+[node name="Celebrations" parent="." unique_id=731670017 instance=ExtResource("17_q1qjh")]
+position = Vector2(141, 165)
+random_time = 0.4
+
+[node name="Celebrations2" parent="." unique_id=1814329911 instance=ExtResource("17_q1qjh")]
+position = Vector2(660, 212)
+random_time = 0.2
+
+[node name="Celebrations3" parent="." unique_id=842280036 instance=ExtResource("17_q1qjh")]
+position = Vector2(549, 588)
+random_time = 0.15
+
+[node name="Celebrations4" parent="." unique_id=354244823 instance=ExtResource("17_q1qjh")]
+position = Vector2(1155, 168)
+random_time = 0.05
+
+[node name="Celebrations5" parent="." unique_id=2052061027 instance=ExtResource("17_q1qjh")]
+position = Vector2(1395, 492)
+random_time = 0.25
+
+[node name="Juichen" type="AudioStreamPlayer2D" parent="." unique_id=546844088]
+stream = ExtResource("18_sguyg")
+volume_db = 10.0
+
+[connection signal="pressed" from="Objects/Reset" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Objects/Advance" to="." method="_on_button_2_pressed"]
