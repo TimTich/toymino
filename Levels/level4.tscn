@@ -57,7 +57,7 @@ fill_from = Vector2(1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
 size = Vector2(800, 75)
 
-[node name="Level1" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
+[node name="level4" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
 script = ExtResource("1_enj4k")
 objectsNode = NodePath("Objects")
 celebrations = [NodePath("Celebrations"), NodePath("Celebrations2"), NodePath("Celebrations3"), NodePath("Celebrations4"), NodePath("Celebrations5")]
