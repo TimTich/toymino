@@ -201,6 +201,26 @@ position = Vector2(1191, 505)
 [node name="Domino17" parent="Objects" unique_id=885999643 instance=ExtResource("2_nq5j5")]
 position = Vector2(1222, 505)
 
+[node name="Reset" type="Button" parent="Objects" unique_id=1935241504]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Reset"
+
+[node name="Advance" type="Button" parent="Objects" unique_id=630472940]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Next level"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1581496021]
 position = Vector2(841, 210)
 zoom = Vector2(0.685, 0.685)
@@ -228,3 +248,6 @@ random_time = 0.25
 [node name="Juichen" type="AudioStreamPlayer2D" parent="." unique_id=546844088]
 stream = ExtResource("18_r7a1c")
 volume_db = 10.0
+
+[connection signal="pressed" from="Objects/Reset" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Objects/Advance" to="." method="_on_button_2_pressed"]
