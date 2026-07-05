@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cxwi3y1ed04ae" path="res://scenes/toolbox.tscn" id="7_plkcr"]
 [ext_resource type="Texture2D" uid="uid://chsuvq0ajaae3" path="res://icon.svg" id="8_ucg3d"]
 [ext_resource type="PackedScene" uid="uid://c66svb00pd7n5" path="res://scenes/toys/domino/domino.tscn" id="9_fn86y"]
-[ext_resource type="PackedScene" uid="uid://sm8kwjevn4jf" path="res://scenes/environment/tafel/tafel.tscn" id="11_dpe6j"]
+[ext_resource type="PackedScene" uid="uid://sm8kwjevn4jf" path="res://scenes/environment/tafel/Tafel.tscn" id="11_dpe6j"]
 [ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="12_x0bbt"]
 [ext_resource type="PackedScene" uid="uid://bd72ravr51va2" path="res://scenes/toys/car/car.tscn" id="13_04wwc"]
 [ext_resource type="PackedScene" uid="uid://bnm3x0v6l3csc" path="res://Levels/celebrations.tscn" id="17_q1qjh"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://ca2bs4gk5tshm" path="res://Assets/juichen.mp3" id="18_sguyg"]
 [ext_resource type="PackedScene" uid="uid://pd1b0k60hif8" path="res://scenes/environment/block/block.tscn" id="19_m8ou3"]
 [ext_resource type="PackedScene" uid="uid://cxsrc28i0dd32" path="res://scenes/environment/statafel/statafel.tscn" id="20_odihm"]
+[ext_resource type="PackedScene" uid="uid://dhi84ownjbe5o" path="res://scenes/environment/trap_klein/trap_klein.tscn" id="20_plkcr"]
 [ext_resource type="PackedScene" uid="uid://bnkyy10w0121s" path="res://scenes/toys/balloon/balloon.tscn" id="20_vh8st"]
 
 [sub_resource type="Gradient" id="Gradient_r7a1c"]
@@ -134,11 +135,11 @@ position = Vector2(82, 503)
 tipImpulse = Vector2(70, 0)
 
 [node name="Domino4" parent="Objects" unique_id=524222818 instance=ExtResource("9_fn86y")]
-position = Vector2(866, 600)
+position = Vector2(1215, 626)
 tipImpulse = Vector2(70, 0)
 
 [node name="Tafel" parent="Objects" unique_id=833002844 instance=ExtResource("11_dpe6j")]
-position = Vector2(382, 571)
+position = Vector2(380, 553)
 
 [node name="Ball" parent="Objects" unique_id=710849021 instance=ExtResource("12_x0bbt")]
 position = Vector2(1577, 512)
@@ -149,13 +150,13 @@ freeze = true
 position = Vector2(521, 415)
 
 [node name="Domino6" parent="Objects" unique_id=495719941 instance=ExtResource("9_fn86y")]
-position = Vector2(966, 424)
+position = Vector2(1183, 626)
 
 [node name="Domino7" parent="Objects" unique_id=495243564 instance=ExtResource("9_fn86y")]
 position = Vector2(879, 426)
 
 [node name="Domino8" parent="Objects" unique_id=1314929499 instance=ExtResource("9_fn86y")]
-position = Vector2(644, 597)
+position = Vector2(1244, 626)
 
 [node name="Car" parent="Objects" unique_id=1451795916 instance=ExtResource("13_04wwc")]
 position = Vector2(1566, 195)
@@ -179,16 +180,16 @@ position = Vector2(851, 428)
 position = Vector2(146, 504)
 
 [node name="Domino14" parent="Objects" unique_id=2119334816 instance=ExtResource("9_fn86y")]
-position = Vector2(1327, 617)
+position = Vector2(1346, 626)
 
 [node name="Domino15" parent="Objects" unique_id=1335872382 instance=ExtResource("9_fn86y")]
-position = Vector2(1198, 626)
+position = Vector2(1294, 626)
 
 [node name="Domino16" parent="Objects" unique_id=1863563149 instance=ExtResource("9_fn86y")]
-position = Vector2(1140, 615)
+position = Vector2(1269, 626)
 
 [node name="Domino17" parent="Objects" unique_id=885999643 instance=ExtResource("9_fn86y")]
-position = Vector2(1279, 622)
+position = Vector2(1320, 626)
 
 [node name="Reset" type="Button" parent="Objects" unique_id=1935241504]
 visible = false
@@ -211,13 +212,13 @@ theme_override_font_sizes/font_size = 28
 text = "Next level"
 
 [node name="Domino18" parent="Objects" unique_id=2045546303 instance=ExtResource("18_dpe6j")]
-position = Vector2(621, 596)
+position = Vector2(1147, 606)
 
 [node name="Domino19" parent="Objects" unique_id=766695909 instance=ExtResource("18_dpe6j")]
 position = Vector2(181, 485)
 
 [node name="Domino20" parent="Objects" unique_id=646193852 instance=ExtResource("18_dpe6j")]
-position = Vector2(717, 601)
+position = Vector2(1374, 606)
 
 [node name="HellingKlein" parent="Objects" unique_id=1429074296 instance=ExtResource("18_m8ou3")]
 position = Vector2(388, 465)
@@ -230,6 +231,10 @@ position = Vector2(1571, 346)
 
 [node name="Tafel2" parent="Objects" unique_id=932743146 instance=ExtResource("20_odihm")]
 position = Vector2(880, 529)
+
+[node name="TrapKlein" parent="Objects" unique_id=886678923 instance=ExtResource("20_plkcr")]
+position = Vector2(1019, 584)
+scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1581496021]
 position = Vector2(841, 210)
