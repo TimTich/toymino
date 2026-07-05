@@ -137,6 +137,26 @@ texture = ExtResource("12_ki645")
 position = Vector2(394, 26.5)
 shape = SubResource("RectangleShape2D_oqjyl")
 
+[node name="Reset" type="Button" parent="Objects" unique_id=1177282971]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Reset"
+
+[node name="Advance" type="Button" parent="Objects" unique_id=78249692]
+visible = false
+z_index = 5
+offset_left = 1424.0
+offset_top = -245.0
+offset_right = 1670.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 28
+text = "Next level"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1777129291]
 position = Vector2(740, 432)
 zoom = Vector2(1.68, 1.68)
