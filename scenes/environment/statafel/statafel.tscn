@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cxsrc28i0dd32"]
+
+[ext_resource type="Texture2D" uid="uid://dosfd8tvaesyf" path="res://scenes/environment/statafel/Kruk.png" id="1_74g3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
+size = Vector2(97, 36)
+
+[node name="statafel" type="StaticBody2D" unique_id=833002844]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=531060691]
+position = Vector2(2, -66)
+shape = SubResource("RectangleShape2D_1os0n")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1559617383]
+z_index = 1
+position = Vector2(2, 18)
+scale = Vector2(1, 2.2)
+texture = ExtResource("1_74g3d")

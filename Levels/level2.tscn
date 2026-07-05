@@ -6,42 +6,49 @@
 [ext_resource type="Texture2D" uid="uid://2jqiyys2mlaf" path="res://Assets/Book serie groot.png" id="4_m8ou3"]
 [ext_resource type="Texture2D" uid="uid://c75x2p23g4piy" path="res://Assets/Book serie klein.png" id="5_odihm"]
 [ext_resource type="Texture2D" uid="uid://65m2fvponf5p" path="res://Assets/Boek stapel 2.png" id="6_vh8st"]
+[ext_resource type="Texture2D" uid="uid://bkff6inhd8ufv" path="res://Assets/Opberg dozen 2.png" id="7_4idtp"]
 [ext_resource type="PackedScene" uid="uid://cxwi3y1ed04ae" path="res://scenes/toolbox.tscn" id="7_plkcr"]
 [ext_resource type="Texture2D" uid="uid://chsuvq0ajaae3" path="res://icon.svg" id="8_ucg3d"]
 [ext_resource type="PackedScene" uid="uid://c66svb00pd7n5" path="res://scenes/toys/domino/domino.tscn" id="9_fn86y"]
+[ext_resource type="PackedScene" uid="uid://ctkg5mnpx1f1f" path="res://scenes/environment/tafel/tafel.tscn" id="11_dpe6j"]
 [ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="12_x0bbt"]
 [ext_resource type="PackedScene" uid="uid://bd72ravr51va2" path="res://scenes/toys/car/car.tscn" id="13_04wwc"]
-[ext_resource type="PackedScene" uid="uid://ct7rn8x3oy06s" path="res://scenes/toys/hefbrug/hefbrug.tscn" id="14_xghi6"]
 [ext_resource type="PackedScene" uid="uid://bnm3x0v6l3csc" path="res://Levels/celebrations.tscn" id="17_q1qjh"]
+[ext_resource type="PackedScene" uid="uid://2trykf1six1w" path="res://scenes/environment/dozen/kort/opbergdozen_kort.tscn" id="17_vh8st"]
+[ext_resource type="PackedScene" uid="uid://ikbe7orxcg7h" path="res://scenes/toys/domino/domino grijs.tscn" id="18_dpe6j"]
+[ext_resource type="PackedScene" uid="uid://c4bqsjq2quiq1" path="res://scenes/environment/helling_klein/helling_klein.tscn" id="18_m8ou3"]
 [ext_resource type="AudioStream" uid="uid://ca2bs4gk5tshm" path="res://Assets/juichen.mp3" id="18_sguyg"]
+[ext_resource type="PackedScene" uid="uid://pd1b0k60hif8" path="res://scenes/environment/block/block.tscn" id="19_m8ou3"]
+[ext_resource type="PackedScene" uid="uid://cxsrc28i0dd32" path="res://scenes/environment/statafel/statafel.tscn" id="20_odihm"]
+[ext_resource type="PackedScene" uid="uid://bnkyy10w0121s" path="res://scenes/toys/balloon/balloon.tscn" id="20_vh8st"]
 
-[sub_resource type="Gradient" id="Gradient_20gr8"]
+[sub_resource type="Gradient" id="Gradient_r7a1c"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0.98312235, 0.9915612, 1)
 colors = PackedColorArray(0.89254254, 0.79288685, 0.59733456, 1, 0.76433975, 0.7944393, 0.961876, 1, 0.99543315, 0.9608939, 0.9495655, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ts5l0"]
-gradient = SubResource("Gradient_20gr8")
+gradient = SubResource("Gradient_r7a1c")
 width = 2000
 height = 1000
 fill_from = Vector2(1, 0)
 
-[sub_resource type="Gradient" id="Gradient_u2cfn"]
+[sub_resource type="Gradient" id="Gradient_sqs0x"]
 offsets = PackedFloat32Array(0.9915612, 1)
 colors = PackedColorArray(0.76433975, 0.7944393, 0.961876, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1os0n"]
-gradient = SubResource("Gradient_u2cfn")
+gradient = SubResource("Gradient_sqs0x")
 width = 2000
 height = 1000
 fill_from = Vector2(1, 0)
 
-[sub_resource type="Gradient" id="Gradient_lr1ra"]
+[sub_resource type="Gradient" id="Gradient_vy400"]
 offsets = PackedFloat32Array(0.9915612, 1)
 colors = PackedColorArray(0.45000002, 0.5525, 0.6, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r7a1c"]
-gradient = SubResource("Gradient_lr1ra")
+gradient = SubResource("Gradient_vy400")
 width = 2000
 height = 1000
 fill_from = Vector2(1, 0)
@@ -49,10 +56,10 @@ fill_from = Vector2(1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
 size = Vector2(800, 75)
 
-[node name="Level2" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
+[node name="Level1" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
 script = ExtResource("1_u66px")
 objectsNode = NodePath("Objects")
-celebrations = [NodePath("Celebrations"), NodePath("Celebrations2"), NodePath("Celebrations3"), NodePath("Celebrations4")]
+celebrations = [NodePath("Celebrations"), NodePath("Celebrations2"), NodePath("Celebrations3"), NodePath("Celebrations4"), NodePath("Celebrations5")]
 
 [node name="Background" type="Node" parent="." unique_id=1977343865]
 
@@ -65,7 +72,7 @@ position = Vector2(810, -159)
 texture = SubResource("GradientTexture2D_1os0n")
 
 [node name="Floor" type="Sprite2D" parent="Background" unique_id=1113439559]
-position = Vector2(810, 874)
+position = Vector2(840, 867)
 texture = SubResource("GradientTexture2D_r7a1c")
 
 [node name="Boekenkast" type="Sprite2D" parent="Background" unique_id=1752070082]
@@ -90,6 +97,10 @@ position = Vector2(983.00006, 250.99998)
 scale = Vector2(0.78, 0.78)
 texture = ExtResource("6_vh8st")
 
+[node name="OpbergDozen2" type="Sprite2D" parent="Background" unique_id=1987208945]
+position = Vector2(409, 380)
+texture = ExtResource("7_4idtp")
+
 [node name="Objects" type="Node" parent="." unique_id=231676169]
 
 [node name="Toolbox" parent="Objects" unique_id=937079641 instance=ExtResource("7_plkcr")]
@@ -111,71 +122,73 @@ position = Vector2(394, 26.5)
 shape = SubResource("RectangleShape2D_1os0n")
 
 [node name="Domino" parent="Objects" unique_id=1991590098 instance=ExtResource("9_fn86y")]
-position = Vector2(1057, 416)
+position = Vector2(22, 504)
 isFirst = true
 
 [node name="Domino2" parent="Objects" unique_id=564463175 instance=ExtResource("9_fn86y")]
-position = Vector2(1118, 416)
+position = Vector2(52, 504)
 tipImpulse = Vector2(70, 0)
 
 [node name="Domino3" parent="Objects" unique_id=2104497383 instance=ExtResource("9_fn86y")]
-position = Vector2(1171, 416)
+position = Vector2(82, 503)
 tipImpulse = Vector2(70, 0)
 
 [node name="Domino4" parent="Objects" unique_id=524222818 instance=ExtResource("9_fn86y")]
-position = Vector2(1206, 411)
+position = Vector2(866, 600)
 tipImpulse = Vector2(70, 0)
 
+[node name="Tafel" parent="Objects" unique_id=833002844 instance=ExtResource("11_dpe6j")]
+position = Vector2(382, 571)
+
 [node name="Ball" parent="Objects" unique_id=710849021 instance=ExtResource("12_x0bbt")]
-position = Vector2(1594, 513)
+position = Vector2(1577, 512)
 can_sleep = false
 freeze = true
 
 [node name="Domino5" parent="Objects" unique_id=246086847 instance=ExtResource("9_fn86y")]
-position = Vector2(902, 428)
+position = Vector2(521, 415)
 
 [node name="Domino6" parent="Objects" unique_id=495719941 instance=ExtResource("9_fn86y")]
-position = Vector2(1019, 419)
+position = Vector2(966, 424)
 
 [node name="Domino7" parent="Objects" unique_id=495243564 instance=ExtResource("9_fn86y")]
-position = Vector2(938, 424)
+position = Vector2(879, 426)
 
 [node name="Domino8" parent="Objects" unique_id=1314929499 instance=ExtResource("9_fn86y")]
-position = Vector2(981, 417)
+position = Vector2(644, 597)
 
 [node name="Car" parent="Objects" unique_id=1451795916 instance=ExtResource("13_04wwc")]
-position = Vector2(1587, 362)
+position = Vector2(1566, 195)
 
-[node name="Hefbrug" parent="Objects" unique_id=387914154 instance=ExtResource("14_xghi6")]
-position = Vector2(1508, 205)
-scale = Vector2(0.5, 0.5)
+[node name="OpbergdozenKort" parent="Objects" unique_id=130070129 instance=ExtResource("17_vh8st")]
+position = Vector2(125, 585)
 
 [node name="Domino9" parent="Objects" unique_id=194577253 instance=ExtResource("9_fn86y")]
-position = Vector2(848, 506)
+position = Vector2(492, 415)
 
 [node name="Domino10" parent="Objects" unique_id=1994164323 instance=ExtResource("9_fn86y")]
-position = Vector2(882, 506)
+position = Vector2(114, 503)
 
 [node name="Domino11" parent="Objects" unique_id=417593669 instance=ExtResource("9_fn86y")]
-position = Vector2(914, 506)
+position = Vector2(552, 415)
 
 [node name="Domino12" parent="Objects" unique_id=1658133014 instance=ExtResource("9_fn86y")]
-position = Vector2(945, 506)
+position = Vector2(851, 428)
 
 [node name="Domino13" parent="Objects" unique_id=1990046644 instance=ExtResource("9_fn86y")]
-position = Vector2(973, 506)
+position = Vector2(146, 504)
 
 [node name="Domino14" parent="Objects" unique_id=2119334816 instance=ExtResource("9_fn86y")]
-position = Vector2(1129, 505)
+position = Vector2(1327, 617)
 
 [node name="Domino15" parent="Objects" unique_id=1335872382 instance=ExtResource("9_fn86y")]
-position = Vector2(1162, 505)
+position = Vector2(1198, 626)
 
 [node name="Domino16" parent="Objects" unique_id=1863563149 instance=ExtResource("9_fn86y")]
-position = Vector2(1191, 505)
+position = Vector2(1140, 615)
 
 [node name="Domino17" parent="Objects" unique_id=885999643 instance=ExtResource("9_fn86y")]
-position = Vector2(1222, 505)
+position = Vector2(1279, 622)
 
 [node name="Reset" type="Button" parent="Objects" unique_id=1935241504]
 visible = false
@@ -196,6 +209,27 @@ offset_right = 1670.0
 offset_bottom = -161.0
 theme_override_font_sizes/font_size = 28
 text = "Next level"
+
+[node name="Domino18" parent="Objects" unique_id=2045546303 instance=ExtResource("18_dpe6j")]
+position = Vector2(621, 596)
+
+[node name="Domino19" parent="Objects" unique_id=766695909 instance=ExtResource("18_dpe6j")]
+position = Vector2(181, 485)
+
+[node name="Domino20" parent="Objects" unique_id=646193852 instance=ExtResource("18_dpe6j")]
+position = Vector2(717, 601)
+
+[node name="HellingKlein" parent="Objects" unique_id=1429074296 instance=ExtResource("18_m8ou3")]
+position = Vector2(388, 465)
+
+[node name="TrapKlein3" parent="Objects" unique_id=888224850 instance=ExtResource("19_m8ou3")]
+position = Vector2(508, 465)
+
+[node name="Balloon" parent="Objects" unique_id=292060754 instance=ExtResource("20_vh8st")]
+position = Vector2(1571, 346)
+
+[node name="Tafel2" parent="Objects" unique_id=932743146 instance=ExtResource("20_odihm")]
+position = Vector2(880, 529)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1581496021]
 position = Vector2(841, 210)
@@ -225,5 +259,5 @@ random_time = 0.25
 stream = ExtResource("18_sguyg")
 volume_db = 10.0
 
-[connection signal="pressed" from="Objects/Reset" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Objects/Advance" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Objects/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Objects/Advance" to="." method="_on_advance_pressed"]

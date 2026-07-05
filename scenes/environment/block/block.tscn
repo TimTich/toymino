@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://pd1b0k60hif8"]
+
+[ext_resource type="Texture2D" uid="uid://8tl2y86be80w" path="res://scenes/environment/block/block.png" id="1_n8uuj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqc7i"]
+size = Vector2(60, 30)
+
+[node name="TrapKlein" type="StaticBody2D" unique_id=888224850]
+collision_layer = 5
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1903860856]
+scale = Vector2(2, 2)
+texture = ExtResource("1_n8uuj")
+
+[node name="BottomBlockCollider" type="CollisionShape2D" parent="." unique_id=968624542]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_bqc7i")
