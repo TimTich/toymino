@@ -12,6 +12,16 @@ signal level_complete()
 @onready var btn = get_node("Objects/Reset")
 @onready var btn2 = get_node("Objects/Advance")
 
+var levels: Array = [
+	"level0",
+	"level1",
+	"level2",
+	"level3",
+	"level4",
+	"level5"
+]
+var current_level_index: int = 0
+
 func _ready() -> void:
 	for child in objectsNode.get_children():
 		if child is Domino:
@@ -42,4 +52,16 @@ func _on_reset_pressed():
 	get_tree().reload_current_scene()
 
 func _on_advance_pressed():
-		get_tree().change_scene_to_file('res://Levels/level3.tscn')
+	var currentLevel = get_tree().get_current_scene().get_name().to_lower()
+	print(currentLevel)
+	var changeTo = ""
+	var i = 0
+	for level in levels:
+		print(levels[i])
+		if currentLevel == levels[i] && i < 5:
+			changeTo = levels[i+1]
+			print("ChangeTo: " + changeTo)
+		i += 1
+		if (currentLevel == "level5"):
+			changeTo = "title_screen"
+	get_tree().change_scene_to_file("res://levels/" + changeTo + ".tscn")

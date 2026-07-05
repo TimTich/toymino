@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cxwi3y1ed04ae" path="res://scenes/toolbox.tscn" id="8_s71xc"]
 [ext_resource type="Texture2D" uid="uid://chsuvq0ajaae3" path="res://icon.svg" id="9_gq1fj"]
 [ext_resource type="PackedScene" uid="uid://c66svb00pd7n5" path="res://scenes/toys/domino/domino.tscn" id="10_jnwoe"]
-[ext_resource type="PackedScene" uid="uid://ctkg5mnpx1f1f" path="res://scenes/environment/tafel/tafel.tscn" id="11_roy85"]
+[ext_resource type="PackedScene" uid="uid://sm8kwjevn4jf" path="res://scenes/environment/tafel/Tafel.tscn" id="11_roy85"]
 [ext_resource type="PackedScene" uid="uid://cl1dbpehn0h2k" path="res://scenes/toys/domino/dominoGeel.tscn" id="11_xbhv2"]
 [ext_resource type="PackedScene" uid="uid://dhi84ownjbe5o" path="res://scenes/environment/trap_klein/trap_klein.tscn" id="12_jmifx"]
 [ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="13_3fxyf"]
@@ -57,7 +57,7 @@ fill_from = Vector2(1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1os0n"]
 size = Vector2(800, 75)
 
-[node name="Level1" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
+[node name="level4" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
 script = ExtResource("1_enj4k")
 objectsNode = NodePath("Objects")
 celebrations = [NodePath("Celebrations"), NodePath("Celebrations2"), NodePath("Celebrations3"), NodePath("Celebrations4"), NodePath("Celebrations5")]
