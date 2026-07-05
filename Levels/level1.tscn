@@ -13,39 +13,40 @@
 [ext_resource type="Texture2D" uid="uid://65m2fvponf5p" path="res://Assets/Boek stapel 2.png" id="5_u2cfn"]
 [ext_resource type="PackedScene" uid="uid://bd72ravr51va2" path="res://scenes/toys/car/car.tscn" id="6_1jijn"]
 [ext_resource type="PackedScene" uid="uid://cxwi3y1ed04ae" path="res://scenes/toolbox.tscn" id="7_lr1ra"]
+[ext_resource type="Texture2D" uid="uid://bkff6inhd8ufv" path="res://Assets/Opberg dozen 2.png" id="7_sqs0x"]
 [ext_resource type="PackedScene" uid="uid://dnra01utspb" path="res://scenes/environment/helling_middel/helling_middel.tscn" id="8_nq5j5"]
 [ext_resource type="PackedScene" uid="uid://ct7rn8x3oy06s" path="res://scenes/toys/hefbrug/hefbrug.tscn" id="8_ts5l0"]
 [ext_resource type="PackedScene" uid="uid://2trykf1six1w" path="res://scenes/environment/dozen/kort/opbergdozen_kort.tscn" id="9_nq5j5"]
 [ext_resource type="PackedScene" uid="uid://bnm3x0v6l3csc" path="res://Levels/celebrations.tscn" id="16_u2cfn"]
 [ext_resource type="AudioStream" uid="uid://ca2bs4gk5tshm" path="res://Assets/juichen.mp3" id="18_r7a1c"]
 
-[sub_resource type="Gradient" id="Gradient_20gr8"]
+[sub_resource type="Gradient" id="Gradient_r7a1c"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0.98312235, 0.9915612, 1)
 colors = PackedColorArray(0.89254254, 0.79288685, 0.59733456, 1, 0.76433975, 0.7944393, 0.961876, 1, 0.99543315, 0.9608939, 0.9495655, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ts5l0"]
-gradient = SubResource("Gradient_20gr8")
+gradient = SubResource("Gradient_r7a1c")
 width = 2000
 height = 1000
 fill_from = Vector2(1, 0)
 
-[sub_resource type="Gradient" id="Gradient_u2cfn"]
+[sub_resource type="Gradient" id="Gradient_sqs0x"]
 offsets = PackedFloat32Array(0.9915612, 1)
 colors = PackedColorArray(0.76433975, 0.7944393, 0.961876, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1os0n"]
-gradient = SubResource("Gradient_u2cfn")
+gradient = SubResource("Gradient_sqs0x")
 width = 2000
 height = 1000
 fill_from = Vector2(1, 0)
 
-[sub_resource type="Gradient" id="Gradient_lr1ra"]
+[sub_resource type="Gradient" id="Gradient_vy400"]
 offsets = PackedFloat32Array(0.9915612, 1)
 colors = PackedColorArray(0.45000002, 0.5525, 0.6, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r7a1c"]
-gradient = SubResource("Gradient_lr1ra")
+gradient = SubResource("Gradient_vy400")
 width = 2000
 height = 1000
 fill_from = Vector2(1, 0)
@@ -56,7 +57,7 @@ size = Vector2(800, 75)
 [node name="Level1" type="Node" unique_id=1563003557 node_paths=PackedStringArray("objectsNode", "celebrations")]
 script = ExtResource("1_ts5l0")
 objectsNode = NodePath("Objects")
-celebrations = [NodePath("Celebrations"), NodePath("Celebrations2"), NodePath("Celebrations3"), NodePath("Celebrations4")]
+celebrations = [NodePath("Celebrations"), NodePath("Celebrations2"), NodePath("Celebrations3"), NodePath("Celebrations4"), NodePath("Celebrations5")]
 
 [node name="Background" type="Node" parent="." unique_id=1977343865]
 
@@ -93,6 +94,10 @@ texture = ExtResource("4_ts5l0")
 position = Vector2(983.00006, 250.99998)
 scale = Vector2(0.78, 0.78)
 texture = ExtResource("5_u2cfn")
+
+[node name="OpbergDozen2" type="Sprite2D" parent="Background" unique_id=1987208945]
+position = Vector2(409, 380)
+texture = ExtResource("7_sqs0x")
 
 [node name="Objects" type="Node" parent="." unique_id=231676169]
 
@@ -244,5 +249,5 @@ random_time = 0.25
 stream = ExtResource("18_r7a1c")
 volume_db = 10.0
 
-[connection signal="pressed" from="Objects/Reset" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Objects/Advance" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Objects/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Objects/Advance" to="." method="_on_advance_pressed"]

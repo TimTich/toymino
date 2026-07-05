@@ -37,9 +37,9 @@ func celebrate() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action("start"):
 		btn.visible = true
-		
-func _on_button_pressed():
+
+func _on_reset_pressed():
 	get_tree().reload_current_scene()
 
-func _on_button_2_pressed():
-	get_tree().change_scene_to_file('res://Levels/level2.tscn')
+func _on_advance_pressed():
+		get_tree().change_scene_to_file('res://Levels/level1.tscn')
