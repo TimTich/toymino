@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cxwi3y1ed04ae" path="res://scenes/toolbox.tscn" id="8_s71xc"]
 [ext_resource type="Texture2D" uid="uid://chsuvq0ajaae3" path="res://icon.svg" id="9_gq1fj"]
 [ext_resource type="PackedScene" uid="uid://c66svb00pd7n5" path="res://scenes/toys/domino/domino.tscn" id="10_jnwoe"]
-[ext_resource type="PackedScene" uid="uid://ctkg5mnpx1f1f" path="res://scenes/environment/tafel/tafel.tscn" id="11_roy85"]
+[ext_resource type="PackedScene" uid="uid://sm8kwjevn4jf" path="res://scenes/environment/tafel/tafel.tscn" id="11_roy85"]
 [ext_resource type="PackedScene" uid="uid://cl1dbpehn0h2k" path="res://scenes/toys/domino/dominoGeel.tscn" id="11_xbhv2"]
 [ext_resource type="PackedScene" uid="uid://dhi84ownjbe5o" path="res://scenes/environment/trap_klein/trap_klein.tscn" id="12_jmifx"]
 [ext_resource type="PackedScene" uid="uid://bj4mnvhospm4u" path="res://scenes/toys/ball/ball.tscn" id="13_3fxyf"]
@@ -145,10 +145,10 @@ position = Vector2(295, 476)
 position = Vector2(329, 476)
 
 [node name="Tafel" parent="Objects" unique_id=833002844 instance=ExtResource("11_roy85")]
-position = Vector2(258, 571)
+position = Vector2(258, 553)
 
 [node name="Tafel2" parent="Objects" unique_id=1732935489 instance=ExtResource("11_roy85")]
-position = Vector2(811, 570)
+position = Vector2(809, 552)
 
 [node name="TrapKlein" parent="Objects" unique_id=888224850 instance=ExtResource("12_jmifx")]
 position = Vector2(178, 432)
